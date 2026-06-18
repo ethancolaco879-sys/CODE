@@ -10,6 +10,10 @@ body {
     overflow: visible;
 }
 
+.opennavbar {
+    display: none;
+}
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -64,7 +68,9 @@ body::-webkit-scrollbar {
      margin-top: 4rem;
 }
 
-
+.allScroll {
+    user-select: none;
+}
 
 .booknow:hover {
     cursor: pointer;
@@ -634,8 +640,23 @@ textarea {
         }
 
         .opennavbar {
-            color: black;
+            color: white;
+            font-weight: bolder;
             z-index: 101;
+            font-size: 30px;
+            background-color: navy;
+            display: inline;
+            margin: 17px;
+            height: fit-content;
+            user-select: none;
+            position: fixed;
+            padding: 2rem;
+            border-radius: 16px;
+            transition: transform 0.35s ease, background-color 1.5s ease;
+        }
+
+        .opennavbar:hover {
+            transform: scale(125%);
         }
 
         .navbar {
@@ -653,6 +674,8 @@ textarea {
             z-index: 100;
             top: 0;
             left: 0;
+            user-select: none;
+            padding-top: 9rem;
         }
 
         .line, .line2, .centerlinks {
@@ -696,6 +719,8 @@ textarea {
         .navbaropen {
             transform: translateX(0%);
         }
-
+        .opennavbarclicked {
+            background-color: black;
+        }
 
      }

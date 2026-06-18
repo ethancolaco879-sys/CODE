@@ -145,4 +145,5 @@ function ifbtnclicked(mystat) {
 
 opennavbar.addEventListener("click", ()=> {
     navbar.classList.toggle("navbaropen");
+    opennavbar.classList.toggle("opennavbarclicked")
 })
