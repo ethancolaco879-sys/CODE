@@ -208,6 +208,22 @@ background: linear-gradient(90deg, rgba(253, 29, 29, 1) 60%, rgba(252, 176, 69, 
     display: block;
 }
 
+.card_hotel--1 {
+    font-weight: bolder;
+}
+
+.card_hotel--2 {
+    font-weight: bolder;
+}
+
+.card_star--1 {
+    color: gold;
+}
+
+.card_star--2 {
+    color: gold;
+}
+
 #parent {
     width: 9rem;
     border-radius: 10px;
@@ -228,6 +244,8 @@ background: linear-gradient(90deg, rgba(253, 29, 29, 1) 60%, rgba(252, 176, 69, 
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     color: white;
+    display: flex;
+    flex-direction: column;
     font-family: 'SN Pro';
 }
 
@@ -318,6 +336,8 @@ body #mover {
     padding: 4px;
     font-family: 'SN Pro';
     color: white;
+    display: flex;
+    flex-direction: column;
     text-decoration-skip-ink: auto;
 }
 
@@ -684,8 +704,10 @@ textarea {
             user-select: none;
             border-radius: 8px;
             padding-top: 9rem;
-            border-left: none;
             border: white 2px solid;
+            border-left: none;
+            border-bottom-left-radius: 0px;
+            border-top-left-radius: 0px;
         }
 
         .line, .line2, .centerlinks {
