@@ -26,6 +26,12 @@ const navbar = document.querySelector(".navbar");
 
 const tips = document.querySelector(".tips");
 
+const homeLink = document.querySelector(".home")
+
+homeLink.addEventListener("click", function() {
+    location.reload();
+})
+
 let hoveroff = true;
 
 let thxForRating = false;
