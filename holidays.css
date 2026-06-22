@@ -4,6 +4,23 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-optical-sizing: auto;
+}
+
+.happy-customer-ratings {
+    display: flex;
+    justify-content: space-around;
+}
+
+.happy-customer-ratings__img {
+    width: 10rem !important;
+    height: 10rem !important;
+    object-fit: cover;
+}
+
+.happy-customer-ratings__stars {
+    color: gold;
+    font-size: 24px;
 }
 
 .movingscrollstarrating{
@@ -389,6 +406,10 @@ body .night {
     font-weight: 600;
 }
 
+.GIANT {
+    width: max-content !important;
+}
+
 .thxx {
     font-family: 'SN Pro', sans-serif;
     margin-top: 3rem;
@@ -495,7 +516,7 @@ body .thxx {
 
 .orangeblock2to3 .allScroll{
     height: fit-content;
-     width: 100%;
+     width: 100vw;
     display: flex;
     align-items: center !important;
      flex-direction: column;
@@ -612,6 +633,7 @@ textarea {
     z-index: 11;
 }
 
+
 .x {
     width: 0px;
     height: 0px;
@@ -629,6 +651,10 @@ textarea {
     z-index: 12;
         cursor: pointer;
         opacity: 1;
+}
+
+.TRUST--bolder {
+    font-weight: 700;
 }
 
 .centertextarea textarea{
@@ -675,6 +701,12 @@ textarea {
             overflow-x: auto;
         }
 
+        .big-screen-only {
+            display: none;
+        }
+        .TRUST  {
+            font-size: 22px;
+        }
         .opennavbar {
             color: white;
             font-weight: bolder;
@@ -760,8 +792,8 @@ textarea {
         .navbaropen {
             transform: translateX(0%);
         }
+
         .opennavbarclicked {
             background-color: black;
         }
-
      }
