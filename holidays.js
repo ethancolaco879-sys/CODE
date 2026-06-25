@@ -20,11 +20,13 @@ const overlay = document.querySelector(".overlay");
 
 const x = document.querySelector(".x");
 
-const btn = document.querySelector(".submit");
+const btn = document.querySelector(".submit-rating__button");
 
 const navbar = document.querySelector(".navbar");
 
 const tips = document.querySelector(".tips");
+
+const textarea = document.querySelector("textarea");
 
 const homeLink = document.querySelector(".home")
 
@@ -88,13 +90,11 @@ function myTime() {
 const aCH = document.querySelector(".aCH");
 
 myRevText.addEventListener("click", function() {
-    const theTextarea = document.createElement("textarea");
-    myRevText.remove();
-    aCH.appendChild(theTextarea);
-    theTextarea.classList.add("writeSTYLE");
-    overlay.classList.add("overlayON");
-    x.classList.add("xON");
-    aCH.appendChild(x);
+    x.classList.add("x--shown")
+    console.log("clicked");
+    console.log(x.className);
+    textarea.classList.add("textarea--shown")
+    myRevText.classList.add("myRevText--deleted")
 });
 
 btn.addEventListener("click", function() {
@@ -119,29 +119,10 @@ btn.addEventListener("click", function() {
     btn.style.display = "none";
 });
 
-x.addEventListener("click", function() {
-    const theTextarea = document.querySelector(".writeSTYLE");
-    savedReview = theTextarea.value;
-    const myInput = document.createElement("input");
-    theTextarea.remove();
-    aCH.appendChild(myInput);
-    x.remove();
-    overlay.classList.remove("overlayON");
-    run(myInput);
-    myInput.classList.add("input2class");
-});
-
-function run(inputMy) {
-    inputMy.addEventListener("click", function() {
-        const theTextarea = document.createElement("textarea");
-        inputMy.remove();
-        aCH.appendChild(theTextarea);
-        theTextarea.classList.add("writeSTYLE");
-        overlay.classList.add("overlayON");
-        x.classList.add("xON");
-        aCH.appendChild(x);
-    });
-}
+x.addEventListener("click", ()=> {
+    textarea.classList.remove("textarea--shown")
+    myRevText.classList.remove("myRevText--deleted")
+})
 
 function ifbtnclicked(mystat) {
                     btn.addEventListener("click", function() {
