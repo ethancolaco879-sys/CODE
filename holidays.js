@@ -26,7 +26,7 @@ const navbar = document.querySelector(".navbar");
 
 const tips = document.querySelector(".tips");
 
-const textarea = document.querySelector("textarea");
+const textarea = document.querySelector(".textarea-container__textarea");
 
 const homeLink = document.querySelector(".home")
 
@@ -43,6 +43,8 @@ const opennavbar = document.querySelector(".opennavbar");
 let notclicked = true;
 
 let savedReview = "";
+
+
 
 tips.addEventListener("click", () => {
     window.location.href = "tipscode/tips.html";
@@ -98,16 +100,6 @@ myRevText.addEventListener("click", function() {
 });
 
 btn.addEventListener("click", function() {
-    const reviewInput = document.querySelector(".reviewTXT") 
-    const theTextarea = document.querySelector(".writeSTYLE");
-    const input2class = document.querySelector(".input2class");
-    const writevalue = theTextarea ? theTextarea.value : savedReview;
-    testTXT.textContent = writevalue;
-    myRevText.style.display = "none";
-    if(reviewInput) reviewInput.style.display = "none";
-    if(theTextarea) theTextarea.style.display = "none";
-    if(input2class) input2class.style.display = "none";
-    thxForRating = true;
     x.classList.remove("xON");
     overlay.classList.remove("overlayON");
     if(thxForRating === true) {

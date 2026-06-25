@@ -11,21 +11,26 @@
     display: none;
 }
 
+.textarea-container__div {
+     position: relative;
+     width: max-content;
+     height: max-content;
+     display: inline-block;
+}
+
 .x--shown {
     display: inline !important;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 8px;
+    right: 8px;
     font-size: 30px;
     color: red;
 }
 
 .textarea-container {
-    width: 100vw;
-    height: max-content;
-    position: relative;
     display: flex;
     justify-content: center;
+    width: 100vw
 }
 
 .submit-rating {
@@ -38,7 +43,7 @@
     display: block !important;
 }
 
-.textarea {
+.textarea-container__textarea {
     display: none;
 }
 
