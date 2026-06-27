@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Pixelify+Sans:wght@400..700&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 * {
     padding: 0px;
     margin: 0px;
@@ -23,7 +24,7 @@
     position: absolute;
     top: 8px;
     right: 8px;
-    font-size: 30px;
+    font-family: 'SN Pro', Helvetica;
     color: red;
 }
 
@@ -675,7 +676,16 @@ input {
      position: relative;
 }
 
-/*.overlay {
+.x {
+    display: none;
+}
+
+.textarea-container__textarea {
+    min-width: 50vw;
+    min-height: 10rem;
+}
+
+.overlay {
     opacity: 0;
         width: 100%;
     height: 100%;
@@ -689,6 +699,7 @@ input {
 .overlayON {
     opacity: 1;
 }
+    /*
 
 textarea {
     position: relative;
@@ -859,5 +870,24 @@ textarea {
 
         .opennavbarclicked {
             background-color: black;
+        }
+     }
+
+     @media (max-width: 360px) {
+        .holder__subtitle {
+            font-size: 16px;
+        }
+
+        .freshFrame, .finallyFramed, #frame {
+            width: 70vw !important;
+        }
+
+        .happy-customer-ratings__img {
+            width: 6rem !important;
+            height: 6rem !important;
+        }
+
+        .happy-customer-ratings__stars {
+            font-size: 1rem !important;
         }
      }

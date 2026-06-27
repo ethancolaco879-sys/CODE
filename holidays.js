@@ -95,13 +95,13 @@ myRevText.addEventListener("click", function() {
     x.classList.add("x--shown")
     console.log("clicked");
     console.log(x.className);
-    textarea.classList.add("textarea--shown")
-    myRevText.classList.add("myRevText--deleted")
+    textarea.classList.add("textarea--shown");
+    myRevText.classList.add("myRevText--deleted");
+    overlay.classList.add("overlayON");
+    
 });
 
 btn.addEventListener("click", function() {
-    x.classList.remove("xON");
-    overlay.classList.remove("overlayON");
     if(thxForRating === true) {
         night.style.display = "none";
         thx.textContent = "Thank you for your feedback";
@@ -114,6 +114,8 @@ btn.addEventListener("click", function() {
 x.addEventListener("click", ()=> {
     textarea.classList.remove("textarea--shown")
     myRevText.classList.remove("myRevText--deleted")
+    x.classList.remove("x--shown")
+    overlay.classList.remove("overlayON")
 })
 
 function ifbtnclicked(mystat) {
