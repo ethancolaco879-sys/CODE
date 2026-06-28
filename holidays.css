@@ -782,18 +782,22 @@ textarea {
         .TRUST  {
             font-size: 22px;
         }
+
+
+
         .opennavbar {
             color: white;
             font-weight: bolder;
             z-index: 101;
             font-size: 30px;
+            padding: 2rem;
             background-color: navy;
             display: inline;
-            margin: 17px;
             height: fit-content;
+            margin: 17px;
             user-select: none;
             position: fixed;
-            padding: 2rem;
+
             border-radius: 16px;
             transition: transform 0.35s ease, background-color 1.5s ease;
         }
@@ -873,7 +877,7 @@ textarea {
         }
      }
 
-     @media (max-width: 360px) {
+     @media (max-width: 400px) {
         .holder__subtitle {
             font-size: 16px;
         }
@@ -890,4 +894,22 @@ textarea {
         .happy-customer-ratings__stars {
             font-size: 1rem !important;
         }
+
+            .opennavbar {
+                width: 1rem;
+                height: 1rem;
+                font-size: 1.25rem;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .tips {
+                font-size: 20px;
+            }
+
+            #dreamer {
+                text-align: center;
+            }
      }
