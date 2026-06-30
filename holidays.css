@@ -8,6 +8,10 @@
     font-optical-sizing: auto;
 }
 
+.centerRATING {
+    margin: 1rem;
+}
+
 .x {
     display: none;
 }
@@ -40,13 +44,15 @@
     width: 100vw;
 }
 
-.textarea--shown {
-    display: block !important;
-}
-
 .textarea-container__textarea {
     display: none;
 }
+
+.textarea--shown {
+    display: block;
+}
+
+
 
 .myRevText--deleted {
     display: none;
@@ -911,5 +917,11 @@ textarea {
 
             #dreamer {
                 text-align: center;
+            }
+
+            .centerRATING {
+                min-width: 3rem;
+                min-height: 3rem;
+                max-width: 5rem;
             }
      }

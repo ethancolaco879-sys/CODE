@@ -1,6 +1,6 @@
-stars = document.querySelectorAll(".star");
+const stars = document.querySelectorAll(".star");
 
-ratingtext = document.querySelector("#rating");
+const ratingtext = document.querySelector("#rating");
 
 const night = document.querySelector(".night");
 
@@ -42,7 +42,7 @@ const opennavbar = document.querySelector(".opennavbar");
 
 let notclicked = true;
 
-let savedReview = "";
+
 
 
 
@@ -96,27 +96,33 @@ myRevText.addEventListener("click", function() {
     console.log("clicked");
     console.log(x.className);
     textarea.classList.add("textarea--shown");
-    myRevText.classList.add("myRevText--deleted");
-    overlay.classList.add("overlayON");
+    myRevText.classList.add("myRevText--deleted"); //my rev text is the input
+    overlay.classList.add("overlayON"); //overlay on is when the grey overlay is shown
     
 });
 
+
+x.addEventListener("click", ()=> {
+    textarea.classList.remove("textarea--shown"); //hides the textarea, and deletes the class showing it
+    myRevText.classList.remove("myRevText--deleted"); //shows the input, and deletes the class hiding it
+    x.classList.remove("x--shown");
+    overlay.classList.remove("overlayON");
+})
+
 btn.addEventListener("click", function() {
-    if(thxForRating === true) {
+    thxForRating = true;
+    if(thxForRating) {
         night.style.display = "none";
         thx.textContent = "Thank you for your feedback";
         rateus.style.display = "none";
         myTime();
     }
     btn.style.display = "none";
+    testTXT.textContent = textarea.value;
+textarea.classList.remove("textarea--shown");//deletes text area, if it exists
+ myRevText.classList.add("myRevText--deleted")//deletes input
 });
 
-x.addEventListener("click", ()=> {
-    textarea.classList.remove("textarea--shown")
-    myRevText.classList.remove("myRevText--deleted")
-    x.classList.remove("x--shown")
-    overlay.classList.remove("overlayON")
-})
 
 function ifbtnclicked(mystat) {
                     btn.addEventListener("click", function() {
