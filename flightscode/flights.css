@@ -91,3 +91,20 @@ body {
 .destinationFlights {
     margin-top: 6rem;
 }
+
+.colaconest-approved-destinations {
+    display: flex;
+    width: 50dvw;
+    flex-direction: column;
+}
+
+.colaconest-destinations__img {
+    object-fit: cover;
+}
+
+.colaconest-destinations__details {
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.1s ease;
+}

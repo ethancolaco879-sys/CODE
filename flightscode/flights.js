@@ -1,14 +1,33 @@
 // Note: the majority of variables in this file are camelCase styled
 
-const destinationsDiv =
-    document.querySelector('.destinationsDiv');
+const destinationsDiv = document.querySelector('.destinationsDiv');
 
-const sidebarTitle =
-    document.querySelector('.sidebar-title');
+const sidebarTitle =document.querySelector('.sidebar-title');
 
-    const availableFlights = document.querySelectorAll(".A");
+const availableFlights = document.querySelectorAll(".A");
 
-    const destinations = document.querySelectorAll('.destination');
+const destinations = document.querySelectorAll('.destination');
+
+const colaconestText = document.querySelector(".colaconest-destinations__details");
+
+const colaconestImage = document.querySelector(".colaconest-destinations__img");
+
+let colaconestImageClicked = false;
+
+colaconestImage.addEventListener("click", () => {
+    if(colaconestImageClicked === false) {
+        colaconestText.style.maxHeight = colaconestText.scrollHeight + "px";
+        colaconestText.style.opacity = 1;
+        colaconestImageClicked = true;
+    }
+
+    else {
+        colaconestText.style.maxHeight = 0;
+        colaconestText.style.opacity = 0;
+        colaconestImageClicked = false;
+    }
+
+})
 
     //The accordian animation code
 
