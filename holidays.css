@@ -369,8 +369,7 @@ background: linear-gradient(90deg, rgba(253, 29, 29, 1) 60%, rgba(252, 176, 69, 
 
 #flex {
     display: flex;
-    flex-direction: row;
-    width: fit-content;
+    flex-direction: row !important;
     animation: uhm 7s linear infinite;
     width: max-content;
     font-family: 'SN Pro';
@@ -386,17 +385,23 @@ background: linear-gradient(90deg, rgba(253, 29, 29, 1) 60%, rgba(252, 176, 69, 
 
 @keyframes uhm {
     0%{transform: translateX(0);}
-    100%{transform: translateX(calc(-50% - 2rem));}
+    100%{transform: translateX(-50%);}
+}
+
+#group1, #group2 {
+    display: flex;
 }
 
 .shvred {
     background-color: grey;
     padding: 2rem;
     border-radius: 20px;
-        flex-direction: column !important;
     white-space: nowrap;
     margin-right: 4rem;
     height: max-content;
+        display: flex;
+    flex-direction: column;
+      color: #f5f5f0;
     box-shadow: 3px 5px 4px rgba(0,0,0, 0.3);
 }
 
@@ -405,10 +410,6 @@ body #mover {
     align-items: flex-end;
 }
 
-#group1, #group2  {
-    display: flex;
-    gap: 4rem;
-}
 
 .popularpicks {
     background-color: black;
@@ -592,12 +593,10 @@ body .thxx {
 }
 
 .allScroll {
+    height: fit-content;
     padding: 2rem;
 }
 
-.shvred {
-    color: #f5f5f0;
-}
 
 
 
