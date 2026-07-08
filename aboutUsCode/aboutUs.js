@@ -2,7 +2,18 @@ const flightsLink = document.querySelector(".colaconest-details--link");
 
 const openNavbarButton = document.querySelector(".opennav-button");
 
-const mainHeader = document.querySelector(".main-header")
+const mainHeader = document.querySelector(".main-header");
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach(function(navLink) {
+    navLink.addEventListener("mouseover", function() {
+        this.classList.toggle("navLinkAnimation")
+    });
+    navLink.addEventListener("mouseout", function() {
+        this.classList.toggle("navLinkAnimation");
+    })
+})
 
 openNavbarButton.addEventListener("click", ()=> {
     const navbar = document.querySelector("nav");
