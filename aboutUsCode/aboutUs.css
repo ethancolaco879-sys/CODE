@@ -5,7 +5,41 @@
 }
 
 .colaconest-details {
+    text-align: center;
     display: inline;
+    line-height: 1.6rem;
+}
+
+.colaconest-details--link {
+    text-decoration: underline;
+}
+
+.colaconest-details--link:hover {
+    cursor: pointer;
+}
+
+.header__img {
+    width: 100dvw;
+    height: 6rem;
+    object-fit: cover;
+    z-index: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.page-title {
+    color: navy;
+    margin-top: 0.5rem;
+}
+
+.colaconest-details-div {
+    margin: 0 auto;
+    margin-top: 2rem;
+    border-radius: 4px;
+    padding: 0.5rem;
+    max-width: 50dvw;
+    min-width: 400px;
+            box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.4);
 }
 
 .colaconest-details--link {
@@ -19,9 +53,11 @@
     width: 100dvw;
     transition: transform 0.35s ease;
     transform: translateY(-3rem);
+
 }
 
 .opennav-button {
+    z-index: 1000;
     transition: transform 0.25948903920309393020393893s ease;
 }
 
@@ -56,4 +92,21 @@ a:hover {
     width: 100dvw;
     display: flex;
     justify-content: center;
+}
+
+.header {
+    background-image: url("questionMark.png");
+    background-size: cover;
+    width: 100dvw;
+    display: flex;
+    justify-content: center;
+    height: 6rem;
+}
+
+footer {
+    margin-top: 18rem;
+}
+
+.family-buisness-title {
+    margin-top: 3rem;
 }
