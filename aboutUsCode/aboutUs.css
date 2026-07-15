@@ -4,6 +4,8 @@
     --navy-color: #00006c;
     --border-radius-md: 8px; /*md = medium*/
     --border-radius-sml: 6px; /*sml = small*/
+    --light-black: #333333;
+    --text-shadow: 0 0 10px rgba(0, 0, 0, 0.36), 0 0 20px rgba(0, 0, 0, 0.25), 0px 0px 40px rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -15,6 +17,7 @@
 body {
     font-family: 'SN Pro', helvetica;
     font-optical-sizing: auto;
+    width: 100dvw;
 }
 
 .colaconest-details {
@@ -142,12 +145,17 @@ footer {
 
 .why-us__explaination {
     max-width: 31rem;
+    padding: 0.25rem;
     border: 2px dashed grey;
 }
 
 .why-us-title {
     margin-top: 3rem;
+    text-shadow: var(--text-shadow);
     letter-spacing: 0.02rem;
+    color: var(--light-black);
+    margin-left: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .colaconest-details--link {
@@ -176,4 +184,63 @@ footer {
 
 .contact-us-link__why-us:hover {
     background-size: 100% 100%;
+}
+
+.family-buisness__title {
+    text-shadow: var(--text-shadow);
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+}
+
+.family-buisness {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    width: 100dvw;
+    align-items: center;
+}
+
+.family-buisness__explanation {
+    border: 2px dashed grey;
+    padding: 0.3rem;
+    max-width: 31rem;
+}
+
+.family-buisness__title {
+    margin-bottom: 0.2rem;
+    color: var(--light-black);
+}
+
+.open-extras__button {
+    color: white;
+    font-weight: 700;
+    background-color: navy;
+    font-size: 30px;
+    border: none;
+    border-radius: var(--border-radius-sml);
+    padding: 1rem;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 1s ease;
+}
+
+.aside--open {
+    transform: translateX(0%);
+}
+
+.open-extras__button {
+    transition: transform 0.2s ease;
+}
+
+.open-extras__button:active {
+    transform: scale(0.9);
 }

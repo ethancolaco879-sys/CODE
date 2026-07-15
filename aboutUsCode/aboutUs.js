@@ -6,6 +6,11 @@ const mainHeader = document.querySelector(".main-header");
 
 const navLinks = document.querySelectorAll(".nav-link");
 
+const openExtrasButton = document.querySelector(".open-extras__button");
+
+const aside = document.querySelector("aside");
+
+
 navLinks.forEach(function(navLink) {
     navLink.addEventListener("mouseover", function() {
         this.classList.toggle("navLinkAnimation")
@@ -24,3 +29,12 @@ openNavbarButton.addEventListener("click", ()=> {
 flightsLink.addEventListener("click", ()=> {
     window.location.href = "../flightscode/flights.html"
 })
+
+
+openExtrasButton.addEventListener("click", function() {
+    aside.classList.toggle("aside--open");
+
+})
+
+
+
