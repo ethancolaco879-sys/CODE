@@ -1,3 +1,29 @@
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-analytics.js";
+import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBZzWS8uAnZW_lC6YE9ikJNel89d1l8IpU",
+    authDomain: "colaconest-holidays.firebaseapp.com",
+    projectId: "colaconest-holidays",
+    storageBucket: "colaconest-holidays.firebasestorage.app",
+    messagingSenderId: "724545113880",
+    appId: "1:724545113880:web:252ccf1f677d7fa8f8986d",
+    measurementId: "G-5NYX53VZPR"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+let myIndex = 0;
+
 const stars = document.querySelectorAll(".star");
 
 const ratingtext = document.querySelector("#rating");
@@ -44,8 +70,6 @@ let notclicked = true;
 
 
 
-
-
 tips.addEventListener("click", () => {
     window.location.href = "tipscode/tips.html";
 })
@@ -66,7 +90,7 @@ eachstar.addEventListener("mouseout", function() {
 
 eachstar.addEventListener("click", function() {
     ratingtext.style.display = "none";
-    myindex = index + 1;
+    myIndex = index + 1;
     for(let mystat = 0; mystat <= index; mystat = mystat + 1) {
         stars[mystat].style.color = "rgba(255, 215, 0, 1)";
         ifbtnclicked(mystat);
@@ -121,6 +145,15 @@ btn.addEventListener("click", function() {
     testTXT.textContent = textarea.value;
 textarea.classList.remove("textarea--shown");//deletes text area, if it exists
  myRevText.classList.add("myRevText--deleted")//deletes input
+
+ addDoc(collection(db, "reviews"), { //add doc just adds a document to where you state to to add it
+    stars: myIndex,
+    text: textarea.value,
+    createdAt: Date.now()
+ });
+
+ 
+
 });
 
 
@@ -133,4 +166,14 @@ function ifbtnclicked(mystat) {
 opennavbar.addEventListener("click", ()=> {
     navbar.classList.toggle("navbaropen");
     opennavbar.classList.toggle("opennavbarclicked")
+})
+
+onSnapshot(collection(db, "reviews"), (snapshot) => { //on snap shot just gets the stuff from where you tell it to look
+    testTXT.innerHTML = "";
+    snapshot.forEach((doc) => {
+        const reviewEl = document.createElement("p");
+        const review = doc.data();
+        testTXT.appendChild(reviewEl);
+        reviewEl.textContent = `STARS:${review.stars} ${review.text} CREATED AT: ${review.createdAt}`
+    })
 })

@@ -244,6 +244,7 @@ aside {
     padding: 0.5rem;
     position: fixed;
     width: max-content;
+    color: white;
     margin-top: 6rem;
     background-color: var(--navy-color);
 }
@@ -271,9 +272,20 @@ aside a:hover {
 }
 
 .open-extras__button {
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.5s ease;
+    box-shadow: 
+    0px 10px 20px rgba(0, 0, 0, 0.3),
+    0px 20px 25px rgba(0, 0, 0, 0.2);
+}
+
+.open-extras__button:hover {
+    box-shadow: 
+    0px 10px 20px rgba(0, 0, 0, 0.2),
+    0px 20px 25px rgba(0, 0, 0, 0.1);
+    transform: scale(1.15);
 }
 
 .open-extras__button:active {
     transform: scale(0.9);
 }
+

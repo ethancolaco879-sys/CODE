@@ -33,7 +33,6 @@ flightsLink.addEventListener("click", ()=> {
 
 openExtrasButton.addEventListener("click", function() {
     aside.classList.toggle("aside--open");
-
 })
 
 

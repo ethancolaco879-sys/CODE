@@ -1,110 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
+
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #f0f0f0;
-    height: 100dvh;
+    font-family: 'SN Pro', helvetica;
     font-optical-sizing: auto;
 }
 
 .page-title {
-    display: block !important;
+    text-align: center;
+    text-decoration: underline;
 }
 
-.alignment .destinationsFiltered {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.destinationsDiv {
-    max-height: 0;
-    overflow: hidden;
-
-    opacity: 0;
-    transform: translateY(-10px);
-
-    transition:
-        max-height 0.4s ease,
-        opacity 0.3s ease-out,
-        transform 0.3s ease-out;
-}
-
-.alignment {
-    height: 100%;
-    display: flex;
-}
-
-.A {
-    display: none;
-}
-
-.show-destinations {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.sidebar {
-    height: 100dvh !important;
-    width: fit-content;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.page-title {
-    font-size: 2rem;
-    display: inline;
-}
-
-.GoaFlights img {
-    height: 20rem;
-}
-
-.GoaFlights {
-    display: flex;
-    flex-direction: row;
-    height: fit-content;
-    background-color: lightgrey;
-    font-family: 'SN Pro', helvetica;
-}
-
-.GoaRatingStars {
-    font-size: 32px;
-    color: #FFD700;
-}
-
-.GoaFlights .GoaFlightsDescription {
-    color: rgb(54, 69, 79);
-}
-
-.emptyStars {
-    color: rgba(0, 0, 0, 0.1);
-}
-
-.destinationFlights {
-    margin-top: 6rem;
-}
-
-.colaconest-approved-destinations {
-    display: flex;
-    width: 50dvw;
-    flex-direction: column;
-}
-
-.colaconest-destinations__img {
-    object-fit: cover;
-}
-
-.colaconest-destinations__details {
-    max-height: 0px;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.35s ease, opacity 0.1s ease;
+.page-description {
+    margin: 0 auto;
+    max-width: 75dvw;
+    background-color: antiquewhite;
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-shadow:
+    0px 10px 20px rgba(0, 0, 0, 0.4),
+    0px 25px 30px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
 }
