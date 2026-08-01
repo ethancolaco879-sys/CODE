@@ -5,7 +5,40 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+}
+
+body {
     font-optical-sizing: auto;
+}
+
+.google-signin {
+    position: fixed;
+    color: white;
+    border: none;
+    background-color: navy;
+    padding: 0.3rem;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    box-shadow: 
+    0 0 8px 5px rgba(0, 0, 0, 0.2),
+    0 0 18px 18px rgba(0, 0, 0, 0.1);
+}
+
+.google-signin:hover {
+    transform: scale(1.1);
+}
+
+.google-signin:active {
+    transform: scale(0.9);
+}
+
+.review {
+    font-family: 'SN Pro', helvetica;
+    display: inline;
+    width: 7rem;
+    min-height: 7rem;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .centerRATING {
@@ -656,14 +689,6 @@ body .thxx {
 
 input {
     margin: 0 auto;
-    display: block;
-}
-
-.tester {
-    font-family: 'SN Pro', sans-serif;
-    text-align: center;
-    margin-top: 1rem;
-    color: grey;
     display: block;
 }
 

@@ -1,7 +1,8 @@
   // Import the functions you need from the SDKs you need
+  import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-auth.js";
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-analytics.js";
-import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, onSnapshot, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,6 +22,8 @@ import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstati
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   const db = getFirestore(app);
+  const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
 let myIndex = 0;
 
@@ -38,7 +41,7 @@ const ratedstars = document.querySelectorAll(".goldenstarsback");
 
 const myRevText = document.querySelector(".reviewTXT");
 
-const testTXT = document.querySelector(".tester");
+const testTXT = document.querySelector(".review-container");
 
 const body = document.querySelector("body");
 
@@ -56,6 +59,8 @@ const textarea = document.querySelector(".textarea-container__textarea");
 
 const homeLink = document.querySelector(".home")
 
+const googleSignIn = document.querySelector(".google-signin");
+
 homeLink.addEventListener("click", function() {
     location.reload();
 })
@@ -68,7 +73,18 @@ const opennavbar = document.querySelector(".opennavbar");
 
 let notclicked = true;
 
-
+googleSignIn.addEventListener("click", function() {
+    signInWithPopup(auth, provider)
+    .then((result) => {
+        console.log("Signed in!");
+        const user = result.user;
+        setDoc ( doc(db, "users", user.uid), {
+            email: user.email,
+            displayName: user.displayName,
+            createdAt: new Date().toLocaleDateString('en-GB')
+        })
+    }) 
+})
 
 tips.addEventListener("click", () => {
     window.location.href = "tipscode/tips.html";
@@ -149,7 +165,7 @@ textarea.classList.remove("textarea--shown");//deletes text area, if it exists
  addDoc(collection(db, "reviews"), { //add doc just adds a document to where you state to to add it
     stars: myIndex,
     text: textarea.value,
-    createdAt: Date.now()
+    createdAt: new Date().toLocaleDateString('en-GB')
  });
 
  
@@ -157,11 +173,6 @@ textarea.classList.remove("textarea--shown");//deletes text area, if it exists
 });
 
 
-function ifbtnclicked(mystat) {
-                    btn.addEventListener("click", function() {
-         ratedstars[mystat].style.color = "rgba(255, 215, 0, 1)";
-        })
-}
 
 opennavbar.addEventListener("click", ()=> {
     navbar.classList.toggle("navbaropen");
@@ -174,6 +185,10 @@ onSnapshot(collection(db, "reviews"), (snapshot) => { //on snap shot just gets t
         const reviewEl = document.createElement("p");
         const review = doc.data();
         testTXT.appendChild(reviewEl);
-        reviewEl.textContent = `STARS:${review.stars} ${review.text} CREATED AT: ${review.createdAt}`
+        reviewEl.classList.add("review");
+        for(let starsRated = 0; starsRated <= review.stars; starsRated++) {
+            ratedstars[starsRated].style.color = "rgba(255, 215, 0, 1)"
+        }
+        reviewEl.textContent = ` ${review.text} CREATED AT: ${review.createdAt}`
     })
 })
