@@ -37,11 +37,9 @@ const thx = document.querySelector(".thxx")
 
 const rateus = document.querySelector(".rate-us");
 
-const ratedstars = document.querySelectorAll(".goldenstarsback");
-
 const myRevText = document.querySelector(".reviewTXT");
 
-const testTXT = document.querySelector(".review-container");
+const reviewContainer = document.querySelector(".review-container");
 
 const body = document.querySelector("body");
 
@@ -49,7 +47,7 @@ const overlay = document.querySelector(".overlay");
 
 const x = document.querySelector(".x");
 
-const btn = document.querySelector(".submit-rating__button");
+const submitRatingBtn = document.querySelector(".submit-rating__button");
 
 const navbar = document.querySelector(".navbar");
 
@@ -107,9 +105,8 @@ eachstar.addEventListener("mouseout", function() {
 eachstar.addEventListener("click", function() {
     ratingtext.style.display = "none";
     myIndex = index + 1;
-    for(let mystat = 0; mystat <= index; mystat = mystat + 1) {
+    for(let mystat = 0; mystat <= index; mystat++) {
         stars[mystat].style.color = "rgba(255, 215, 0, 1)";
-        ifbtnclicked(mystat);
     }
     activefalsehover();
 });
@@ -149,7 +146,7 @@ x.addEventListener("click", ()=> {
     overlay.classList.remove("overlayON");
 })
 
-btn.addEventListener("click", function() {
+submitRatingBtn.addEventListener("click", function() {
     thxForRating = true;
     if(thxForRating) {
         night.style.display = "none";
@@ -157,8 +154,7 @@ btn.addEventListener("click", function() {
         rateus.style.display = "none";
         myTime();
     }
-    btn.style.display = "none";
-    testTXT.textContent = textarea.value;
+    submitRatingBtn.style.display = "none";
 textarea.classList.remove("textarea--shown");//deletes text area, if it exists
  myRevText.classList.add("myRevText--deleted")//deletes input
 
@@ -180,15 +176,40 @@ opennavbar.addEventListener("click", ()=> {
 })
 
 onSnapshot(collection(db, "reviews"), (snapshot) => { //on snap shot just gets the stuff from where you tell it to look
-    testTXT.innerHTML = "";
-    snapshot.forEach((doc) => {
-        const reviewEl = document.createElement("p");
+    reviewContainer.innerHTML = "";
+    snapshot.docs.slice(0, 3).forEach((doc) => {
+        const reviewEl = document.createElement("div");
         const review = doc.data();
-        testTXT.appendChild(reviewEl);
+        reviewContainer.appendChild(reviewEl);
         reviewEl.classList.add("review");
-        for(let starsRated = 0; starsRated <= review.stars; starsRated++) {
-            ratedstars[starsRated].style.color = "rgba(255, 215, 0, 1)"
+        const reviewStarsContainer = document.createElement("div"); // container for the review stars
+        reviewEl.appendChild(reviewStarsContainer);
+        const allStars = []; // the array to run the loop on to show the highlighted stars
+        for(let i = 0; i < 5; i++) {
+            const reviewStar = document.createElement("p");
+            reviewStar.innerHTML = "&#9733;";
+            reviewStarsContainer.appendChild(reviewStar);
+                    allStars.push(reviewStar);
+                            reviewStar.classList.add("review__star"); //stars class
         }
-        reviewEl.textContent = ` ${review.text} CREATED AT: ${review.createdAt}`
+        for(let starsRated = 0; starsRated < review.stars; starsRated++) {
+            allStars[starsRated].style.color = "rgba(255, 215, 0, 1)";
+        }
+        const reviewText = document.createElement("p");
+        reviewEl.appendChild(reviewText);
+        reviewText.textContent = review.text;
+        const reviewCreatedAtDate = document.createElement("p");
+        reviewEl.appendChild(reviewCreatedAtDate);
+        reviewCreatedAtDate.textContent = review.createdAt;
+        //CLASSES
+        reviewStarsContainer.classList.add("review__stars"); //stars container class
+        reviewText.classList.add("review__text");
+        reviewCreatedAtDate.classList.add("review__created-at");
+
+        //reviewEl.textContent = ` ${review.text} CREATED AT: ${review.createdAt}`
     })
 })
+
+// NOTES
+
+//basically we should have a div which is reviewEl containing each of the parts: the review text; the created at text and the rated stars. We should ensure each of these have their own p tags
