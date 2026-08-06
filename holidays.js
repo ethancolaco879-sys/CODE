@@ -59,6 +59,8 @@ const homeLink = document.querySelector(".home")
 
 const googleSignIn = document.querySelector(".google-signin");
 
+const user = auth.currentUser;
+
 homeLink.addEventListener("click", function() {
     location.reload();
 })
@@ -158,7 +160,7 @@ submitRatingBtn.addEventListener("click", function() {
 textarea.classList.remove("textarea--shown");//deletes text area, if it exists
  myRevText.classList.add("myRevText--deleted")//deletes input
 
- addDoc(collection(db, "reviews"), { //add doc just adds a document to where you state to to add it
+ setDoc(doc(db, "reviews", user.uid), { //add doc just adds a document to where you state to to add it
     stars: myIndex,
     text: textarea.value,
     createdAt: new Date().toLocaleDateString('en-GB')

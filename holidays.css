@@ -13,6 +13,10 @@ body {
     font-optical-sizing: auto;
 }
 
+.review__created-at {
+    background: red;
+}
+
 .google-signin {
     position: fixed;
     color: white;
@@ -43,9 +47,7 @@ body {
     color: rgba(0, 0, 0, 0.3);
 }
 
-.review__stars {
-    display: flex;
-}
+
 
 
 
@@ -54,25 +56,46 @@ body {
     justify-content: space-between
 }
 
+.review {
+    flex-shrink: 0;
+}
 
+.review .review__stars {
+    display: flex;
+    
+}
+
+.review {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.review__stars {
+    display: flex;
+    position: absolute;
+    top: 0.5rem;
+    font-size: 1.2rem;
+}
 
 .review {
     font-family: 'SN Pro', helvetica;
     width: 7rem;
     min-height: 7rem;
     background-color: rgba(0, 0, 0, 0.15);
-    padding: 3rem;
+padding-left: 4rem;
+padding-right: 4rem;
+padding-top: 4rem;
+padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start !important;
-    min-width: 0;
+    align-items: center;
     overflow: hidden;
 }
 
-.review-container {
 
-}
 
 .x {
     display: none;
