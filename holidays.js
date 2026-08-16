@@ -1,5 +1,5 @@
   // Import the functions you need from the SDKs you need
-  import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-auth.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-auth.js";
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-analytics.js";
 import { getFirestore, collection, addDoc, onSnapshot, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
@@ -26,6 +26,8 @@ import { getFirestore, collection, addDoc, onSnapshot, doc, setDoc } from "https
 const provider = new GoogleAuthProvider();
 
 let myIndex = 0;
+
+let currentUser = null;
 
 const stars = document.querySelectorAll(".star");
 
@@ -59,7 +61,7 @@ const homeLink = document.querySelector(".home")
 
 const googleSignIn = document.querySelector(".google-signin");
 
-const user = auth.currentUser;
+
 
 homeLink.addEventListener("click", function() {
     location.reload();
@@ -73,17 +75,31 @@ const opennavbar = document.querySelector(".opennavbar");
 
 let notclicked = true;
 
+onAuthStateChanged(auth, function(user) {
+    if(user) {
+        currentUser = user;
+    }
+
+    else {
+        currentUser = null;
+    }
+})
+
 googleSignIn.addEventListener("click", function() {
+
     signInWithPopup(auth, provider)
     .then((result) => {
+        currentUser = result.user;
         console.log("Signed in!");
-        const user = result.user;
-        setDoc ( doc(db, "users", user.uid), {
-            email: user.email,
-            displayName: user.displayName,
+        setDoc(doc(db, "users", currentUser.uid), {
+            email: currentUser.email,
+            displayName: currentUser.displayName,
             createdAt: new Date().toLocaleDateString('en-GB')
         })
     }) 
+    .catch((error) => {
+        console.error("auth error", error.code, error.message);
+    })
 })
 
 tips.addEventListener("click", () => {
@@ -132,8 +148,6 @@ const aCH = document.querySelector(".aCH");
 
 myRevText.addEventListener("click", function() {
     x.classList.add("x--shown")
-    console.log("clicked");
-    console.log(x.className);
     textarea.classList.add("textarea--shown");
     myRevText.classList.add("myRevText--deleted"); //my rev text is the input
     overlay.classList.add("overlayON"); //overlay on is when the grey overlay is shown
@@ -142,13 +156,24 @@ myRevText.addEventListener("click", function() {
 
 
 x.addEventListener("click", ()=> {
-    textarea.classList.remove("textarea--shown"); //hides the textarea, and deletes the class showing it
-    myRevText.classList.remove("myRevText--deleted"); //shows the input, and deletes the class hiding it
+    textarea.classList.remove("textarea--shown"); //hides the textarea by deleting the class showing it
+    myRevText.classList.remove("myRevText--deleted"); //shows the by deleting the class hiding it
     x.classList.remove("x--shown");
     overlay.classList.remove("overlayON");
 })
 
 submitRatingBtn.addEventListener("click", function() {
+    if(!currentUser){
+        alert("Please sign in before adding a review");
+        return;
+    }
+     setDoc(doc(db, "reviews", currentUser.uid), { //add doc just adds a document to where you state to to add it
+    stars: myIndex,
+    text: textarea.value,
+    createdAt: new Date().toLocaleDateString('en-GB')
+ });
+
+ 
     thxForRating = true;
     if(thxForRating) {
         night.style.display = "none";
@@ -160,13 +185,7 @@ submitRatingBtn.addEventListener("click", function() {
 textarea.classList.remove("textarea--shown");//deletes text area, if it exists
  myRevText.classList.add("myRevText--deleted")//deletes input
 
- setDoc(doc(db, "reviews", user.uid), { //add doc just adds a document to where you state to to add it
-    stars: myIndex,
-    text: textarea.value,
-    createdAt: new Date().toLocaleDateString('en-GB')
- });
 
- 
 
 });
 

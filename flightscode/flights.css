@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+navbar {
+    width: 100dvh;
+}
+
 body {
     font-family: 'SN Pro', helvetica;
     font-optical-sizing: auto;
