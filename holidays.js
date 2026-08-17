@@ -2,7 +2,7 @@
   import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-auth.js";
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-analytics.js";
-import { getFirestore, collection, addDoc, onSnapshot, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, onSnapshot, doc, setDoc, serverTimestamp} from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -78,6 +78,7 @@ let notclicked = true;
 onAuthStateChanged(auth, function(user) {
     if(user) {
         currentUser = user;
+        googleSignIn.style.display = "none";
     }
 
     else {
@@ -94,7 +95,7 @@ googleSignIn.addEventListener("click", function() {
         setDoc(doc(db, "users", currentUser.uid), {
             email: currentUser.email,
             displayName: currentUser.displayName,
-            createdAt: new Date().toLocaleDateString('en-GB')
+            createdAt: serverTimestamp()
         })
     }) 
     .catch((error) => {
