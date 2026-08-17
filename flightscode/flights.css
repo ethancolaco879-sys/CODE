@@ -32,3 +32,12 @@ body {
     0px 25px 30px rgba(0, 0, 0, 0.2);
     margin-top: 1rem;
 }
+
+.booking-flights__suggestions {
+    background-color: lightgrey;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    display: none;
+    width: max-content;
+    height: 0;
+}
