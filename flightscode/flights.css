@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
-    --lightgrey-box: rgba(211, 211, 211, 0.4);
+    --lightgrey-box: rgba(211, 211, 211, 1);
 }
 
 * {
@@ -54,4 +54,43 @@ body {
 .booking-flights {
     display: flex;
     justify-content: space-between;
+}
+
+.booking-flights__suggestions--to {
+    display: none;
+    height: max-content;
+    width: max-content;
+    padding: 0.2rem;
+    color: grey;
+    background-color: var(--lightgrey-box);
+}
+
+.booking-flights {
+    display: block;
+}
+
+.booking-flights__label {
+    display: block;
+}
+
+.booking-flights input{
+    width: 100%;
+}
+
+input[type="date"]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.booking-flights__suggestions--to, .booking-flights__suggestions {
+    position: absolute;
+    z-index: 3;
+}
+
+.booking-flights__input--to, .booking-flights__input {
+    position: relative;
 }
