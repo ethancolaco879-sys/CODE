@@ -172,8 +172,15 @@ let toMatches = [];
 
 let selectedToDestIndex= 0;
 
-function debounce(fn, delay = 150) {
-
+function debounce(airportFilteringCode, delay = 150) {
+    let timer;
+    return function() {
+        clearTimeout(timer);
+        timer = setTimeout(function() {
+            airportFilteringCode()
+        }, delay);
+        
+    }
 }
 
 toDestinationsInput.addEventListener("keydown",  function(event) {
@@ -205,7 +212,7 @@ toSuggestionContainer[selectedToDestIndex].classList.add("booking-flights__sugge
 
 
 
-toDestinationsInput.addEventListener("input", debounce(async function()) {
+toDestinationsInput.addEventListener("input", debounce(async function() {
     toSuggestions.innerHTML = "";
     selectedToDestIndex= 0;
      let toDestinationsInputValue = toDestinationsInput.value.trim().toLowerCase();
@@ -226,15 +233,13 @@ toDestinationsInput.addEventListener("input", debounce(async function()) {
      if(toMatches.length === 0 || toDestinationsInputValue.length === 0) {
         toSuggestions.innerHTML = "No Results";
      }
-})
+}));
 
 
 
-fromDestination.addEventListener("input", function(event) {
-    suggestions.innerHTML = "";
-        if(!event.key === 'ArrowUp'|| 'ArrowDown') {
-            selectedIndex = 0;
-    }
+fromDestination.addEventListener("input", debounce(async function() {
+            suggestions.innerHTML = "";
+            selectedFromDestIndex = 0;
 
     let fromValue = fromDestination.value.trim().toLowerCase();
     matches = startingPlaces.filter(function(place) {
@@ -267,17 +272,17 @@ fromDestination.addEventListener("input", function(event) {
     }
 
 
-})
+}))
 
 fromDestination.addEventListener("keydown", function(event) {
-    console.log(selectedIndex);
+
 
 
     let suggestionContainer = document.querySelectorAll(".booking-flights__suggestion-container");
 
         if(event.key === 'Enter' && matches.length > 0) {
             event.preventDefault();
-            fromDestination.value = matches[selectedIndex];
+            fromDestination.value = matches[selectedFromDestIndex];
             closeSuggestions();
     }
 

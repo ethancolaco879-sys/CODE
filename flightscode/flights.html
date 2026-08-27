@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,17 +10,17 @@
   </head>
   <body>
     <header><h1 class="page-title">Flights</h1></header>
-    <navbar class="page-navigation">
+    <nav class="page-navigation">
       <button class="navigation__button"><i class="fa-solid fa-bars"></i></button>
-    </navbar>
+    </nav>
     <main>
         <div class="page-description">
       <p>Colaconest flights: easy, reliable and fast. Just a click away from a dream holiday. Book now.</p>
       </div>
-      <div class="booking-flights">
+      <div class="booking-flights bg-blue-400 rounded-lg py-3 justify-center lg:flex-row flex-col">
         <div class="booking-flights__from">
-          <label class="booking-flights__label">Departing From</label>
-        <input class="booking-flights__input" placeholder="place, airport">
+          <label class="booking-flights__label">Departing from</label>
+        <input class="booking-flights__input bg-blue-600/30" placeholder="place, airport" >
         <div class="booking-flights__suggestions"></div>
         </div>
         <div class="booking-flights__to">
@@ -30,7 +31,7 @@
            <div class="booking-flights__date">
             <label class="booking-flights__label">Departing on</label>
             <input type="date" class="booking-flights__input--from-date" required>
-            <label class="booking-flights__label">Arriving At</label>
+            <label class="booking-flights__label">Returning on</label>
             <input type="date" class="booking-flights_-input--to-date" required>
            </div>
       </div>
