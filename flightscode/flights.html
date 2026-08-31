@@ -11,7 +11,14 @@
   <body>
     <header><h1 class="page-title">Flights</h1></header>
     <nav class="page-navigation">
-      <button class="navigation__button"><i class="fa-solid fa-bars"></i></button>
+      <div class="sidebar fixed lg:w-dvw bg-blue-800 lg:h-max text-white flex lg:justify-around flex-col lg:flex-row max-sm:gap-3 max-sm:p-3 rounded-r-lg top-25">
+                <a class="home">Home</a>
+        <a class="flights" href="flightscode/flights.html">Flights</a>
+        <a class="hotels">Hotels</a>
+        <a class="about">About Us</a>
+        <a class="contact" href="contactuscode/ContactUs.html">Contact Us</a>
+      </div>
+      <button class="navigation__button transition-scale duration-450 ease hover:scale-110 active:scale-90 bg-blue-800 text-white p-4 text-2xl rounded-xl fixed ml-1"><i class="fa-solid fa-bars "></i></button>
     </nav>
     <main>
         <div class="page-description">

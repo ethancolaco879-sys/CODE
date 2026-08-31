@@ -2,6 +2,7 @@
 
 :root {
     --lightgrey-box: rgba(211, 211, 211, 1);
+    --background-gold-hover: linear-gradient(to right, #d4af37, #d4af37);
 }
 
 * {
@@ -9,7 +10,7 @@
 }
 
 nav {
-    width: 100dvh;
+    width: 100dvw;
 }
 
 body {
@@ -96,4 +97,33 @@ body {
     width: 100%;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
+}
+
+.booking-flights label {
+    color: #f0f2f5;
+    font-weight: 650;
+}
+
+.sidebar a:hover{
+    background-size: 100% 100%;
+}
+
+.sidebar a {
+    background-image: var(--background-gold-hover);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease;
+    display: inline;
+    width: max-content;
+    height: max-content;
+    padding: 0.25rem;
+}
+
+.sidebar {
+    transition: transform 0.5s ease;
+    transform: translateX(-100%);
+}
+
+.sidebar--open {
+    transform: translateX(0%);
 }

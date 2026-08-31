@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://kit.fontawesome.com/683676ef22.js" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="homepage.css">
+  </head>
+  <body>
+    <div class="booking flex flex-col bg-blue-400 mx-auto w-max p-3 text-white rounded-lg mt-3">
+<div class="booking-flights flex flex-col gap-4">
+
+    <div class="booking-flights__from flex flex-col lg:flex-row">
+        <label class="booking-flights__label">Departing from</label>
+
+        <input 
+            class="booking-flights__input" 
+            placeholder="place, airport"
+        >
+
+        <div class="booking-flights__suggestions"></div>
+    </div>
+
+
+    <div class="booking-flights__to flex flex-col">
+        <label class="booking-flights__label">Departing to</label>
+
+        <input 
+            class="booking-flights__input--to" 
+            placeholder="place, airport"
+        >
+
+        <div class="booking-flights__suggestions--to"></div>
+    </div>
+
+
+    <div class="booking-flights__date flex gap-3 flex">
+        <label class="booking-flights__label">Departing on</label>
+
+        <input 
+            type="date" 
+            class="booking-flights__input--from-date" 
+            required
+        >
+
+        <label class="booking-flights__label">Returning on</label>
+
+        <input type="date" class="booking-flights_-input--to-date" required>
+    </div>
+    <div class="booking-hotels">
+        <label>Staying at (optional)</label>
+        <input class="booking__hotels">
+        <label>Nights</label>
+        <input class="booking__nights" type="number">
+    </div>
+</div>
+<button class="booking__search-button bg-yellow-500 w-max mx-auto mt-2 p-3 rounded-md font-bold text-black">
+    Search<i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+    <script src="homepage.js"></script>
+  </body>
+</html>

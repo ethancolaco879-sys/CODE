@@ -161,8 +161,7 @@ const toSuggestions = document.querySelector(".booking-flights__suggestions--to"
 
 const toContainer = document.querySelector(".booking-flights__to");
 
-
-
+const navbarBtn = document.querySelector(".navigation__button");
 
 let matches = [];
 
@@ -335,3 +334,7 @@ function closeSuggestions() {
     suggestions.style.display = "none";
 }
 
+navbarBtn.addEventListener("click", function() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("sidebar--open");
+})
