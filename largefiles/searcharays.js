@@ -157,6 +157,7 @@ const flights = [
         from: "London Stansted",
         to: "Lisbon Airport (LIS)",
         departureDate: "2026-09-10",
+        returnDate: "2026-09-17",
         departureTime: "06:30",
         arrivalTime: "09:15",
         price: 89
@@ -166,6 +167,7 @@ const flights = [
         from: "London Stansted",
         to: "Lisbon Airport (LIS)",
         departureDate: "2026-09-10",
+        returnDate: "2026-09-17",
         departureTime: "13:20",
         arrivalTime: "16:05",
         price: 105
@@ -175,6 +177,7 @@ const flights = [
         from: "London Stansted",
         to: "Lisbon Airport (LIS)",
         departureDate: "2026-09-10",
+        returnDate: "2026-09-17",
         departureTime: "18:45",
         arrivalTime: "21:30",
         price: 79
@@ -185,6 +188,7 @@ const flights = [
         from: "London Gatwick",
         to: "Lisbon Airport (LIS)",
         departureDate: "2026-09-10",
+        returnDate: "2026-09-17",
         departureTime: "07:15",
         arrivalTime: "10:00",
         price: 92
@@ -194,6 +198,7 @@ const flights = [
         from: "London Gatwick",
         to: "Lisbon Airport (LIS)",
         departureDate: "2026-09-10",
+        returnDate: "2026-09-17",
         departureTime: "15:40",
         arrivalTime: "18:25",
         price: 118
@@ -204,6 +209,7 @@ const flights = [
         from: "Manchester",
         to: "Tenerife South Airport (TFS)",
         departureDate: "2026-09-12",
+        returnDate: "2026-09-19",
         departureTime: "06:00",
         arrivalTime: "10:35",
         price: 165
@@ -213,6 +219,7 @@ const flights = [
         from: "Manchester",
         to: "Tenerife South Airport (TFS)",
         departureDate: "2026-09-12",
+        returnDate: "2026-09-19",
         departureTime: "09:30",
         arrivalTime: "14:05",
         price: 189
@@ -222,6 +229,7 @@ const flights = [
         from: "Manchester",
         to: "Tenerife South Airport (TFS)",
         departureDate: "2026-09-12",
+        returnDate: "2026-09-19",
         departureTime: "15:10",
         arrivalTime: "19:45",
         price: 154
@@ -232,6 +240,7 @@ const flights = [
         from: "Birmingham",
         to: "Tenerife South Airport (TFS)",
         departureDate: "2026-09-12",
+        returnDate: "2026-09-19",
         departureTime: "07:40",
         arrivalTime: "12:10",
         price: 159
@@ -241,6 +250,7 @@ const flights = [
         from: "Birmingham",
         to: "Tenerife South Airport (TFS)",
         departureDate: "2026-09-12",
+        returnDate: "2026-09-19",
         departureTime: "14:25",
         arrivalTime: "18:55",
         price: 177
@@ -251,6 +261,7 @@ const flights = [
         from: "London Gatwick",
         to: "Alicante Airport (ALC)",
         departureDate: "2026-09-15",
+        returnDate: "2026-09-22",
         departureTime: "05:50",
         arrivalTime: "09:20",
         price: 72
@@ -260,6 +271,7 @@ const flights = [
         from: "London Gatwick",
         to: "Alicante Airport (ALC)",
         departureDate: "2026-09-15",
+        returnDate: "2026-09-22",
         departureTime: "11:40",
         arrivalTime: "15:10",
         price: 95
@@ -269,6 +281,7 @@ const flights = [
         from: "London Gatwick",
         to: "Alicante Airport (ALC)",
         departureDate: "2026-09-15",
+        returnDate: "2026-09-22",
         departureTime: "17:20",
         arrivalTime: "20:50",
         price: 83
@@ -279,6 +292,7 @@ const flights = [
         from: "Bristol",
         to: "Alicante Airport (ALC)",
         departureDate: "2026-09-15",
+        returnDate: "2026-09-22",
         departureTime: "06:15",
         arrivalTime: "09:45",
         price: 76
@@ -288,6 +302,7 @@ const flights = [
         from: "Bristol",
         to: "Alicante Airport (ALC)",
         departureDate: "2026-09-15",
+        returnDate: "2026-09-22",
         departureTime: "16:00",
         arrivalTime: "19:30",
         price: 91
@@ -298,6 +313,7 @@ const flights = [
         from: "London Luton",
         to: "Málaga Airport (AGP)",
         departureDate: "2026-09-18",
+        returnDate: "2026-09-25",
         departureTime: "06:45",
         arrivalTime: "10:35",
         price: 84
@@ -307,6 +323,7 @@ const flights = [
         from: "London Luton",
         to: "Málaga Airport (AGP)",
         departureDate: "2026-09-18",
+        returnDate: "2026-09-25",
         departureTime: "12:25",
         arrivalTime: "16:15",
         price: 103
@@ -316,6 +333,7 @@ const flights = [
         from: "London Luton",
         to: "Málaga Airport (AGP)",
         departureDate: "2026-09-18",
+        returnDate: "2026-09-25",
         departureTime: "18:10",
         arrivalTime: "22:00",
         price: 93
@@ -326,6 +344,7 @@ const flights = [
         from: "Manchester",
         to: "Málaga Airport (AGP)",
         departureDate: "2026-09-18",
+        returnDate: "2026-09-25",
         departureTime: "07:10",
         arrivalTime: "11:10",
         price: 99
@@ -335,6 +354,7 @@ const flights = [
         from: "Manchester",
         to: "Málaga Airport (AGP)",
         departureDate: "2026-09-18",
+        returnDate: "2026-09-25",
         departureTime: "15:30",
         arrivalTime: "19:30",
         price: 115
@@ -345,6 +365,7 @@ const flights = [
         from: "London Stansted",
         to: "Palma de Mallorca Airport (PMI) - Majorca",
         departureDate: "2026-09-20",
+        returnDate: "2026-09-27",
         departureTime: "05:55",
         arrivalTime: "09:20",
         price: 69
@@ -354,6 +375,7 @@ const flights = [
         from: "London Stansted",
         to: "Palma de Mallorca Airport (PMI) - Majorca",
         departureDate: "2026-09-20",
+        returnDate: "2026-09-27",
         departureTime: "10:45",
         arrivalTime: "14:10",
         price: 87
@@ -363,6 +385,7 @@ const flights = [
         from: "London Stansted",
         to: "Palma de Mallorca Airport (PMI) - Majorca",
         departureDate: "2026-09-20",
+        returnDate: "2026-09-27",
         departureTime: "17:35",
         arrivalTime: "21:00",
         price: 75
@@ -373,6 +396,7 @@ const flights = [
         from: "Birmingham",
         to: "Palma de Mallorca Airport (PMI) - Majorca",
         departureDate: "2026-09-20",
+        returnDate: "2026-09-27",
         departureTime: "06:30",
         arrivalTime: "09:55",
         price: 78
@@ -382,6 +406,7 @@ const flights = [
         from: "Birmingham",
         to: "Palma de Mallorca Airport (PMI) - Majorca",
         departureDate: "2026-09-20",
+        returnDate: "2026-09-27",
         departureTime: "14:15",
         arrivalTime: "17:40",
         price: 94
@@ -392,6 +417,7 @@ const flights = [
         from: "Newcastle International",
         to: "Paphos International Airport (PFO)",
         departureDate: "2026-09-22",
+        returnDate: "2026-09-29",
         departureTime: "06:10",
         arrivalTime: "12:50",
         price: 174
@@ -401,6 +427,7 @@ const flights = [
         from: "Newcastle International",
         to: "Paphos International Airport (PFO)",
         departureDate: "2026-09-22",
+        returnDate: "2026-09-29",
         departureTime: "13:40",
         arrivalTime: "20:20",
         price: 192
@@ -411,6 +438,7 @@ const flights = [
         from: "Manchester",
         to: "Paphos International Airport (PFO)",
         departureDate: "2026-09-22",
+        returnDate: "2026-09-29",
         departureTime: "07:00",
         arrivalTime: "13:35",
         price: 168
@@ -420,6 +448,7 @@ const flights = [
         from: "Manchester",
         to: "Paphos International Airport (PFO)",
         departureDate: "2026-09-22",
+        returnDate: "2026-09-29",
         departureTime: "15:20",
         arrivalTime: "21:55",
         price: 185
@@ -430,6 +459,7 @@ const flights = [
         from: "London Gatwick",
         to: "Faro Airport (FAO) - Algarve",
         departureDate: "2026-09-25",
+        returnDate: "2026-10-02",
         departureTime: "06:25",
         arrivalTime: "09:20",
         price: 71
@@ -439,6 +469,7 @@ const flights = [
         from: "London Gatwick",
         to: "Faro Airport (FAO) - Algarve",
         departureDate: "2026-09-25",
+        returnDate: "2026-10-02",
         departureTime: "12:50",
         arrivalTime: "15:45",
         price: 89
@@ -448,6 +479,7 @@ const flights = [
         from: "London Gatwick",
         to: "Faro Airport (FAO) - Algarve",
         departureDate: "2026-09-25",
+        returnDate: "2026-10-02",
         departureTime: "18:30",
         arrivalTime: "21:25",
         price: 81
@@ -458,6 +490,7 @@ const flights = [
         from: "Bristol",
         to: "Faro Airport (FAO) - Algarve",
         departureDate: "2026-09-25",
+        returnDate: "2026-10-02",
         departureTime: "07:20",
         arrivalTime: "10:10",
         price: 74
@@ -467,6 +500,7 @@ const flights = [
         from: "Bristol",
         to: "Faro Airport (FAO) - Algarve",
         departureDate: "2026-09-25",
+        returnDate: "2026-10-02",
         departureTime: "16:45",
         arrivalTime: "19:35",
         price: 88
@@ -477,6 +511,7 @@ const flights = [
         from: "Leeds Bradford",
         to: "Ibiza Airport (IBZ)",
         departureDate: "2026-09-28",
+        returnDate: "2026-10-05",
         departureTime: "06:35",
         arrivalTime: "10:15",
         price: 96
@@ -486,6 +521,7 @@ const flights = [
         from: "Leeds Bradford",
         to: "Ibiza Airport (IBZ)",
         departureDate: "2026-09-28",
+        returnDate: "2026-10-05",
         departureTime: "14:55",
         arrivalTime: "18:35",
         price: 119
@@ -496,6 +532,7 @@ const flights = [
         from: "London Stansted",
         to: "Ibiza Airport (IBZ)",
         departureDate: "2026-09-28",
+        returnDate: "2026-10-05",
         departureTime: "05:45",
         arrivalTime: "09:20",
         price: 79
@@ -505,6 +542,7 @@ const flights = [
         from: "London Stansted",
         to: "Ibiza Airport (IBZ)",
         departureDate: "2026-09-28",
+        returnDate: "2026-10-05",
         departureTime: "11:30",
         arrivalTime: "15:05",
         price: 101
@@ -514,6 +552,7 @@ const flights = [
         from: "London Stansted",
         to: "Ibiza Airport (IBZ)",
         departureDate: "2026-09-28",
+        returnDate: "2026-10-05",
         departureTime: "18:15",
         arrivalTime: "21:50",
         price: 90
@@ -524,6 +563,7 @@ const flights = [
         from: "Edinburgh",
         to: "Antalya Airport (AYT)",
         departureDate: "2026-10-02",
+        returnDate: "2026-10-09",
         departureTime: "06:05",
         arrivalTime: "12:40",
         price: 179
@@ -533,6 +573,7 @@ const flights = [
         from: "Edinburgh",
         to: "Antalya Airport (AYT)",
         departureDate: "2026-10-02",
+        returnDate: "2026-10-09",
         departureTime: "13:15",
         arrivalTime: "19:50",
         price: 198
@@ -543,6 +584,7 @@ const flights = [
         from: "Manchester",
         to: "Antalya Airport (AYT)",
         departureDate: "2026-10-02",
+        returnDate: "2026-10-09",
         departureTime: "05:50",
         arrivalTime: "12:10",
         price: 169
@@ -552,6 +594,7 @@ const flights = [
         from: "Manchester",
         to: "Antalya Airport (AYT)",
         departureDate: "2026-10-02",
+        returnDate: "2026-10-09",
         departureTime: "14:35",
         arrivalTime: "20:55",
         price: 188
@@ -562,6 +605,7 @@ const flights = [
         from: "London Gatwick",
         to: "Malta International Airport (MLA)",
         departureDate: "2026-10-05",
+        returnDate: "2026-10-12",
         departureTime: "06:20",
         arrivalTime: "10:35",
         price: 98
@@ -571,6 +615,7 @@ const flights = [
         from: "London Gatwick",
         to: "Malta International Airport (MLA)",
         departureDate: "2026-10-05",
+        returnDate: "2026-10-12",
         departureTime: "13:10",
         arrivalTime: "17:25",
         price: 116
@@ -580,6 +625,7 @@ const flights = [
         from: "London Gatwick",
         to: "Malta International Airport (MLA)",
         departureDate: "2026-10-05",
+        returnDate: "2026-10-12",
         departureTime: "18:40",
         arrivalTime: "22:55",
         price: 105
@@ -590,6 +636,7 @@ const flights = [
         from: "Birmingham",
         to: "Malta International Airport (MLA)",
         departureDate: "2026-10-05",
+        returnDate: "2026-10-12",
         departureTime: "07:35",
         arrivalTime: "11:50",
         price: 109
@@ -600,6 +647,7 @@ const flights = [
         from: "London Luton",
         to: "Barcelona El Prat Airport (BCN)",
         departureDate: "2026-10-08",
+        returnDate: "2026-10-15",
         departureTime: "06:40",
         arrivalTime: "09:55",
         price: 64
@@ -609,6 +657,7 @@ const flights = [
         from: "London Luton",
         to: "Barcelona El Prat Airport (BCN)",
         departureDate: "2026-10-08",
+        returnDate: "2026-10-15",
         departureTime: "12:15",
         arrivalTime: "15:30",
         price: 82
@@ -618,6 +667,7 @@ const flights = [
         from: "London Luton",
         to: "Barcelona El Prat Airport (BCN)",
         departureDate: "2026-10-08",
+        returnDate: "2026-10-15",
         departureTime: "19:05",
         arrivalTime: "22:20",
         price: 73

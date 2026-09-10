@@ -20,4 +20,9 @@ div.innerHTML = `<p>${from}<i class="fa-solid fa-plane"></i>${to}</p>
                  `
                  results.appendChild(div);
                  div.classList.add("detailsHolder");
+
 }
+
+                 if(matchingFlights.length === 0) {
+                    div.innerHTML = "No results";
+                 }

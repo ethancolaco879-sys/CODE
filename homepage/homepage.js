@@ -16,6 +16,9 @@ const navbarBtn = document.querySelector(".navigation__button");
 
 const searchBtn = document.querySelector(".booking__search-button")
 
+let userDepartureDate = null;
+
+
 let matches = [];
 
 let selectedFromDestIndex = 0;
@@ -198,11 +201,13 @@ function closeSuggestions() {
 }
 
 searchBtn.addEventListener("click", function() {
+    userDepartureDate = document.querySelector(".booking-flights__input--from-date").value;
     const selectedFrom = fromDestination.value;
     const selectedTo = toDestinationsInput.value;
     matchingFlights = flights.filter(function(flight) {
         return flight.from === selectedFrom
-        && flight.to === selectedTo;
+        && flight.to === selectedTo
+        && flight.departureDate === userDepartureDate;
     })
 const params = new URLSearchParams();
 params.set("matchingFlights",JSON.stringify(matchingFlights));
