@@ -42,6 +42,10 @@ function debounce(airportFilteringCode, delay = 150) {
     }
 }
 
+function highlightMatch(place, typedValue) {
+    const matchIndex = place.toLowerCase().indexOf(typedValue.toLowerCase())
+}
+
 toDestinationsInput.addEventListener("keydown",  function(event) {
     let toSuggestionContainer = document.querySelectorAll(".booking-flights__suggestion-container--to");
     if(event.key === 'Enter') {
@@ -83,7 +87,7 @@ toDestinationsInput.addEventListener("input", debounce(async function() {
         toSuggestions.style.display = "block";
         toSuggestions.style.height = "max-content";
         for(let place of toMatches) {
-        toSuggestionContainer = document.createElement("div");
+        let toSuggestionContainer = document.createElement("div");
         toSuggestions.appendChild(toSuggestionContainer);
         toSuggestionContainer.textContent = place;
            
@@ -108,7 +112,7 @@ fromDestination.addEventListener("input", debounce(async function() {
 
     let fromValue = fromDestination.value.trim().toLowerCase();
     matches = startingPlaces.filter(function(place) {
-       return place.toLowerCase().startsWith(fromValue);
+       return place.toLowerCase().includes(fromValue);
 
     })
         if(matches.length > 0) {

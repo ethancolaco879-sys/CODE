@@ -671,5 +671,406 @@ const flights = [
         departureTime: "19:05",
         arrivalTime: "22:20",
         price: 73
+    },
+
+        {
+        id: 51,
+        from: "London Stansted",
+        to: "Lisbon Airport (LIS)",
+        departureDate: "2026-09-12",
+        returnDate: "2026-09-19",
+        departureTime: "07:00",
+        arrivalTime: "09:45",
+        price: 82
+    },
+    {
+        id: 52,
+        from: "Manchester",
+        to: "Lisbon Airport (LIS)",
+        departureDate: "2026-09-10",
+        returnDate: "2026-09-17",
+        departureTime: "08:15",
+        arrivalTime: "11:00",
+        price: 97
+    },
+    {
+        id: 53,
+        from: "Manchester",
+        to: "Tenerife South Airport (TFS)",
+        departureDate: "2026-09-10",
+        returnDate: "2026-09-17",
+        departureTime: "06:45",
+        arrivalTime: "11:20",
+        price: 149
+    },
+    {
+        id: 54,
+        from: "Edinburgh",
+        to: "Tenerife South Airport (TFS)",
+        departureDate: "2026-09-12",
+        returnDate: "2026-09-19",
+        departureTime: "07:20",
+        arrivalTime: "12:00",
+        price: 172
+    },
+    {
+        id: 55,
+        from: "Bristol",
+        to: "Málaga Airport (AGP)",
+        departureDate: "2026-09-12",
+        returnDate: "2026-09-19",
+        departureTime: "06:30",
+        arrivalTime: "10:20",
+        price: 88
+    },
+    {
+        id: 56,
+        from: "London Luton",
+        to: "Alicante Airport (ALC)",
+        departureDate: "2026-09-15",
+        returnDate: "2026-09-22",
+        departureTime: "09:10",
+        arrivalTime: "12:40",
+        price: 79
+    },
+    {
+        id: 57,
+        from: "Birmingham",
+        to: "Alicante Airport (ALC)",
+        departureDate: "2026-09-15",
+        returnDate: "2026-09-22",
+        departureTime: "13:05",
+        arrivalTime: "16:35",
+        price: 85
+    },
+    {
+        id: 58,
+        from: "London Stansted",
+        to: "Málaga Airport (AGP)",
+        departureDate: "2026-09-18",
+        returnDate: "2026-09-25",
+        departureTime: "05:55",
+        arrivalTime: "09:45",
+        price: 76
+    },
+    {
+        id: 59,
+        from: "Newcastle International",
+        to: "Málaga Airport (AGP)",
+        departureDate: "2026-09-18",
+        returnDate: "2026-09-25",
+        departureTime: "07:50",
+        arrivalTime: "11:45",
+        price: 112
+    },
+    {
+        id: 60,
+        from: "Glasgow",
+        to: "Palma de Mallorca Airport (PMI) - Majorca",
+        departureDate: "2026-09-20",
+        returnDate: "2026-09-27",
+        departureTime: "06:40",
+        arrivalTime: "10:10",
+        price: 98
+    },
+    {
+        id: 61,
+        from: "Liverpool John Lennon",
+        to: "Palma de Mallorca Airport (PMI) - Majorca",
+        departureDate: "2026-09-20",
+        returnDate: "2026-09-27",
+        departureTime: "11:20",
+        arrivalTime: "14:50",
+        price: 91
+    },
+    {
+        id: 62,
+        from: "London Gatwick",
+        to: "Paphos International Airport (PFO)",
+        departureDate: "2026-09-22",
+        returnDate: "2026-09-29",
+        departureTime: "06:35",
+        arrivalTime: "13:10",
+        price: 181
+    },
+    {
+        id: 63,
+        from: "Bristol",
+        to: "Paphos International Airport (PFO)",
+        departureDate: "2026-09-22",
+        returnDate: "2026-09-29",
+        departureTime: "07:45",
+        arrivalTime: "14:20",
+        price: 176
+    },
+    {
+        id: 64,
+        from: "Leeds Bradford",
+        to: "Faro Airport (FAO) - Algarve",
+        departureDate: "2026-09-25",
+        returnDate: "2026-10-02",
+        departureTime: "06:50",
+        arrivalTime: "09:40",
+        price: 83
+    },
+    {
+        id: 65,
+        from: "East Midlands",
+        to: "Faro Airport (FAO) - Algarve",
+        departureDate: "2026-09-25",
+        returnDate: "2026-10-02",
+        departureTime: "13:30",
+        arrivalTime: "16:20",
+        price: 79
+    },
+    {
+        id: 66,
+        from: "Manchester",
+        to: "Ibiza Airport (IBZ)",
+        departureDate: "2026-09-28",
+        returnDate: "2026-10-05",
+        departureTime: "06:20",
+        arrivalTime: "10:00",
+        price: 104
+    },
+    {
+        id: 67,
+        from: "Birmingham",
+        to: "Ibiza Airport (IBZ)",
+        departureDate: "2026-09-28",
+        returnDate: "2026-10-05",
+        departureTime: "12:45",
+        arrivalTime: "16:25",
+        price: 99
+    },
+    {
+        id: 68,
+        from: "London Gatwick",
+        to: "Antalya Airport (AYT)",
+        departureDate: "2026-10-02",
+        returnDate: "2026-10-09",
+        departureTime: "06:15",
+        arrivalTime: "12:50",
+        price: 174
+    },
+    {
+        id: 69,
+        from: "Bournemouth",
+        to: "Antalya Airport (AYT)",
+        departureDate: "2026-10-02",
+        returnDate: "2026-10-09",
+        departureTime: "07:05",
+        arrivalTime: "13:40",
+        price: 183
+    },
+    {
+        id: 70,
+        from: "Belfast International",
+        to: "Malta International Airport (MLA)",
+        departureDate: "2026-10-05",
+        returnDate: "2026-10-12",
+        departureTime: "06:10",
+        arrivalTime: "10:30",
+        price: 121
+    },
+    {
+        id: 71,
+        from: "Manchester",
+        to: "Malta International Airport (MLA)",
+        departureDate: "2026-10-05",
+        returnDate: "2026-10-12",
+        departureTime: "14:00",
+        arrivalTime: "18:15",
+        price: 107
+    },
+    {
+        id: 72,
+        from: "Edinburgh",
+        to: "Barcelona El Prat Airport (BCN)",
+        departureDate: "2026-10-08",
+        returnDate: "2026-10-15",
+        departureTime: "06:25",
+        arrivalTime: "09:40",
+        price: 89
+    },
+    {
+        id: 73,
+        from: "Bristol",
+        to: "Barcelona El Prat Airport (BCN)",
+        departureDate: "2026-10-08",
+        returnDate: "2026-10-15",
+        departureTime: "12:50",
+        arrivalTime: "16:05",
+        price: 77
+    },
+    {
+        id: 74,
+        from: "London Stansted",
+        to: "Rome Fiumicino Airport (FCO)",
+        departureDate: "2026-09-14",
+        returnDate: "2026-09-21",
+        departureTime: "06:30",
+        arrivalTime: "09:35",
+        price: 94
+    },
+    {
+        id: 75,
+        from: "Manchester",
+        to: "Rome Fiumicino Airport (FCO)",
+        departureDate: "2026-09-14",
+        returnDate: "2026-09-21",
+        departureTime: "13:15",
+        arrivalTime: "16:20",
+        price: 10
+    },
+    {
+        id: 76,
+        from: "London Gatwick",
+        to: "Venice Marco Polo Airport (VCE)",
+        departureDate: "2026-09-16",
+        returnDate: "2026-09-23",
+        departureTime: "07:05",
+        arrivalTime: "10:00",
+        price: 92
+    },
+    {
+        id: 77,
+        from: "Birmingham",
+        to: "Venice Marco Polo Airport (VCE)",
+        departureDate: "2026-09-16",
+        returnDate: "2026-09-23",
+        departureTime: "14:40",
+        arrivalTime: "17:35",
+        price: 87
+    },
+    {
+        id: 78,
+        from: "London Luton",
+        to: "Athens International Airport (ATH)",
+        departureDate: "2026-09-19",
+        returnDate: "2026-09-26",
+        departureTime: "06:00",
+        arrivalTime: "11:15",
+        price: 131
+    },
+    {
+        id: 79,
+        from: "Manchester",
+        to: "Athens International Airport (ATH)",
+        departureDate: "2026-09-19",
+        returnDate: "2026-09-26",
+        departureTime: "12:30",
+        arrivalTime: "17:45",
+        price: 142
+    },
+    {
+        id: 80,
+        from: "London Stansted",
+        to: "Santorini Airport (JTR)",
+        departureDate: "2026-09-21",
+        returnDate: "2026-09-28",
+        departureTime: "06:45",
+        arrivalTime: "12:30",
+        price: 156
+    },
+    {
+        id: 81,
+        from: "Bristol",
+        to: "Santorini Airport (JTR)",
+        departureDate: "2026-09-21",
+        returnDate: "2026-09-28",
+        departureTime: "13:20",
+        arrivalTime: "19:05",
+        price: 163
+    },
+    {
+        id: 82,
+        from: "Edinburgh",
+        to: "Corfu International Airport (CFU)",
+        departureDate: "2026-09-24",
+        returnDate: "2026-10-01",
+        departureTime: "06:15",
+        arrivalTime: "11:00",
+        price: 138
+    },
+    {
+        id: 83,
+        from: "Newcastle International",
+        to: "Corfu International Airport (CFU)",
+        departureDate: "2026-09-24",
+        returnDate: "2026-10-01",
+        departureTime: "07:30",
+        arrivalTime: "12:15",
+        price: 145
+    },
+    {
+        id: 84,
+        from: "London Gatwick",
+        to: "Dubrovnik Airport (DBV)",
+        departureDate: "2026-09-26",
+        returnDate: "2026-10-03",
+        departureTime: "06:50",
+        arrivalTime: "10:05",
+        price: 119
+    },
+    {
+        id: 85,
+        from: "Manchester",
+        to: "Dubrovnik Airport (DBV)",
+        departureDate: "2026-09-26",
+        returnDate: "2026-10-03",
+        departureTime: "13:35",
+        arrivalTime: "16:50",
+        price: 124
+    },
+    {
+        id: 86,
+        from: "Birmingham",
+        to: "Prague Airport (PRG)",
+        departureDate: "2026-09-13",
+        returnDate: "2026-09-20",
+        departureTime: "06:20",
+        arrivalTime: "08:55",
+        price: 68
+    },
+    {
+        id: 87,
+        from: "London Luton",
+        to: "Prague Airport (PRG)",
+        departureDate: "2026-09-13",
+        returnDate: "2026-09-20",
+        departureTime: "12:40",
+        arrivalTime: "15:15",
+        price: 71
+    },
+    {
+        id: 88,
+        from: "Leeds Bradford",
+        to: "Budapest Airport (BUD)",
+        departureDate: "2026-09-17",
+        returnDate: "2026-09-24",
+        departureTime: "06:35",
+        arrivalTime: "09:20",
+        price: 74
+    },
+    {
+        id: 89,
+        from: "London Stansted",
+        to: "Budapest Airport (BUD)",
+        departureDate: "2026-09-17",
+        returnDate: "2026-09-24",
+        departureTime: "13:50",
+        arrivalTime: "16:35",
+        price: 69
+    },
+    {
+        id: 90,
+        from: "Manchester",
+        to: "Copenhagen Airport (CPH)",
+        departureDate: "2026-09-27",
+        returnDate: "2026-10-04",
+        departureTime: "07:10",
+        arrivalTime: "09:40",
+        price: 96
     }
 ];

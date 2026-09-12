@@ -2,8 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const matchingFlights = JSON.parse(urlParams.get("matchingFlights"));
 
-    const results =
-document.querySelector(".results");
+    const results = document.querySelector(".results");
 
 for(let matchingFlight of matchingFlights) {
     let from = matchingFlight.from;
@@ -12,17 +11,21 @@ for(let matchingFlight of matchingFlights) {
     let departureTime = matchingFlight.departureTime;
     let departureDate = matchingFlight.departureDate;
     let arrivalTime = matchingFlight.arrivalTime;
-    let div = document.createElement("div");
+    let flight = document.createElement("div");
 
-div.innerHTML = `<p>${from}<i class="fa-solid fa-plane"></i>${to}</p>
+
+    
+        flight.innerHTML = `<p>${from}<i class="fa-solid fa-plane"></i>${to}</p>
                  <p>£${price}</p>
                  <p>Departing at ${departureTime} on ${departureDate}</p>
                  `
-                 results.appendChild(div);
-                 div.classList.add("detailsHolder");
+                 results.appendChild(flight);
+                 flight.classList.add("detailsHolder");
+
+
 
 }
 
-                 if(matchingFlights.length === 0) {
-                    div.innerHTML = "No results";
+                      if(matchingFlights.length === 0) {
+                    results.innerHTML = "No results";
                  }
