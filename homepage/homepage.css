@@ -10,7 +10,7 @@
 
 body  {
     width: 100dvw;
-    height: 100dvw;
+    height: 100dvh;
 }
 
 .booking-flights__to, .booking-flights__from {
@@ -48,3 +48,16 @@ body  {
     width: max-content;
 }
 
+nav a {
+    color: white;
+    background-image: linear-gradient(gold, gold);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    width: max-content;
+    height: max-content;
+    transition: background-size 0.5s ease;
+}
+
+nav a:hover {
+    background-size: 100% 100%;
+}
