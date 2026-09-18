@@ -16,6 +16,10 @@ const navbarBtn = document.querySelector(".navigation__button");
 
 const searchBtn = document.querySelector(".booking__search-button")
 
+const navBtn = document.querySelector(".nav__button");
+
+const nav =document.querySelector("nav");
+
 let userDepartureDate = null;
 
 
@@ -41,6 +45,10 @@ function debounce(airportFilteringCode, delay = 150) {
         
     }
 }
+
+navBtn.addEventListener("click", function() {
+    nav.classList.toggle("translate-x-[-99%]")
+} )
 
 function highlightMatch(place, typedValue) {
     const matchIndex = place.toLowerCase().indexOf(typedValue.toLowerCase())
