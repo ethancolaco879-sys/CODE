@@ -56,6 +56,8 @@ nav a {
     width: max-content;
     height: max-content;
     transition: background-size 0.5s ease;
+    padding: 0.1rem;
+    user-select: none;
 }
 
 nav a:hover {

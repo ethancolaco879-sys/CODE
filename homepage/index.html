@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="homepage.css">
   </head>
   <body class="antialiased">
-    <button class="nav__button lg:hidden fixed top-1 left-2 z-30 bg-blue-900 rounded-sm p-3 hover:scale-110 transiton-scale duration-250 ease"><i class="fa-solid fa-bars text-white text-4xl"></i></button>
+    <button class="google-sign-in fixed right-2 top-3 bg-blue-900 text-white p-1 rounded-sm hover:scale-105 active:scale-95 transition-scale duration-250 ease cursor-pointer">Sign In <i class="fa-solid fa-user"></i></button>
+    <button class="nav__button cursor-pointer lg:hidden fixed top-1 left-2 z-30 bg-blue-900 rounded-sm p-3 hover:scale-110 transiton-scale duration-250 ease active:scale-95"><i class="fa-solid fa-bars text-white text-4xl"></i></button>
     <nav class="nav ease max-sm:mt-6 transition-transform duration-500 z-20 fixed top-12 left-0 lg:top-0 flex md:flex-row md:gap-1 gap-2 bg-blue-900 md:justify-around w-[25dvw] md:w-full h-max flex-col"><a href="#">Home</a><a href="/flightscode/flights.html">Flights</a><a href="#">Hotels</a><a href="/aboutUsCode/aboutUs.html">About Us</a><a href="/contactuscode/ContactUs.html">Contact Us</a></nav>
     <header class="header pt-40 mt-16 lg:mt-12 lg:p-0"><h1 class="text-center text-4xl text-red-700">Sunvista Holidays</h1><h2 class="text-center text-2xl text-red-700">Every horizion, One booking away</h2></header>
     
@@ -67,6 +68,6 @@
 </button>
 <div class="results"></div>
     </div>
-    <script src="homepage.js"></script>
+    <script type="module" src="homepage.js"></script>
   </body>
 </html>

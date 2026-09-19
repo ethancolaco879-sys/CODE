@@ -1,3 +1,32 @@
+  // Import the functions you need from the SDKs you need
+  import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-auth.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-analytics.js";
+import { getFirestore, collection, addDoc, onSnapshot, doc, setDoc, serverTimestamp} from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBZzWS8uAnZW_lC6YE9ikJNel89d1l8IpU",
+    authDomain: "colaconest-holidays.firebaseapp.com",
+    projectId: "colaconest-holidays",
+    storageBucket: "colaconest-holidays.firebasestorage.app",
+    messagingSenderId: "724545113880",
+    appId: "1:724545113880:web:252ccf1f677d7fa8f8986d",
+    measurementId: "G-5NYX53VZPR"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+const signIn =
+document.querySelector(".google-sign-in");
 
 
 const fromDestination = document.querySelector(".booking-flights__input");
@@ -19,6 +48,8 @@ const searchBtn = document.querySelector(".booking__search-button")
 const navBtn = document.querySelector(".nav__button");
 
 const nav =document.querySelector("nav");
+
+
 
 let userDepartureDate = null;
 
@@ -49,6 +80,19 @@ function debounce(airportFilteringCode, delay = 150) {
 navBtn.addEventListener("click", function() {
     nav.classList.toggle("translate-x-[-99%]")
 } )
+
+signIn.addEventListener("click", function() {
+    signInWithPopup(auth, provider)
+    .then((result) => {
+        const user = result.user;
+        console.log("sign in approved")
+        setDoc(doc(db, "users", user.uid), {
+            email: user.email,
+            displayName: user.displayName,
+            createdAt: serverTimestamp()
+        })
+    })
+})
 
 function highlightMatch(place, typedValue) {
     const matchIndex = place.toLowerCase().indexOf(typedValue.toLowerCase())
