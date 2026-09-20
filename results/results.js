@@ -11,13 +11,15 @@ for(let matchingFlight of matchingFlights) {
     let departureTime = matchingFlight.departureTime;
     let departureDate = matchingFlight.departureDate;
     let arrivalTime = matchingFlight.arrivalTime;
+    let returnDate = matchingFlight.returnDate;
     let flight = document.createElement("div");
-
+    flight.classList.add("flight");
 
     
         flight.innerHTML = `<p>${from}<i class="fa-solid fa-plane"></i>${to}</p>
-                 <p>£${price}</p>
-                 <p>Departing at ${departureTime} on ${departureDate}</p>
+                 <p>£${price}<i class="fa-solid fa-coins"></i></p>
+                 <p>Departing at ${departureTime} on ${departureDate}<i class="fa-solid fa-calendar"></i></p>
+                 <p>Returning On ${returnDate}<i class="fa-solid fa-calendar"></i></p>
                  `
                  results.appendChild(flight);
                  flight.classList.add("detailsHolder");

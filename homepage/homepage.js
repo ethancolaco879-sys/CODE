@@ -47,20 +47,35 @@ const searchBtn = document.querySelector(".booking__search-button")
 
 const navBtn = document.querySelector(".nav__button");
 
-const nav =document.querySelector("nav");
+const nav =document.querySelector(".nav");
+
+let nights =  document.querySelector(".booking__nights").value;
 
 
+
+
+let user = null;
+
+onAuthStateChanged(auth, (currentUser) => {
+    if(currentUser) {
+        user = currentUser;
+        signIn.style.display = "none";
+    }
+    else {
+        user = null;
+    }
+})
 
 let userDepartureDate = null;
 
 
 let matches = [];
 
-let selectedFromDestIndex = 0;
+let selectedFromDestIndex = -1;
 
 let toMatches = [];
 
-let selectedToDestIndex= 0;
+let selectedToDestIndex= -1;
 
 let matchingFlights = null;
 
@@ -84,7 +99,7 @@ navBtn.addEventListener("click", function() {
 signIn.addEventListener("click", function() {
     signInWithPopup(auth, provider)
     .then((result) => {
-        const user = result.user;
+        user = result.user;
         console.log("sign in approved")
         setDoc(doc(db, "users", user.uid), {
             email: user.email,
@@ -257,16 +272,32 @@ function closeSuggestions() {
 }
 
 searchBtn.addEventListener("click", function() {
+
+    nights = Number.parseInt(nights);
+    const departDate =
+document.querySelector(".booking-flights__input--from-date").value;
+
+const departDateCalcs = new Date(departDate);
+
+let departDateSpare = new Date(departDateCalcs);
+
+departDateSpare.setDate(departDateSpare.getDate() + nights);
+
+let formatted = departDateSpare.toLocaleDateString("sv-SE")
+
     userDepartureDate = document.querySelector(".booking-flights__input--from-date").value;
     const selectedFrom = fromDestination.value;
     const selectedTo = toDestinationsInput.value;
     matchingFlights = flights.filter(function(flight) {
         return flight.from === selectedFrom
         && flight.to === selectedTo
-        && flight.departureDate === userDepartureDate;
+        && flight.departureDate === userDepartureDate
+        && flight.returnDate === formatted;
     })
+
 const params = new URLSearchParams();
 params.set("matchingFlights",JSON.stringify(matchingFlights));
 window.location.href = `/results/results.html?${params.toString()}`;
+
 })
 
