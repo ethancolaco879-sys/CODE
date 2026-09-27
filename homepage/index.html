@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="homepage.css">
   </head>
   <body class="antialiased">
-    <button class="google-sign-in fixed right-2 top-3 bg-blue-900 text-white p-1 rounded-sm hover:scale-105 active:scale-95 transition-scale duration-250 ease cursor-pointer">Sign In <i class="fa-solid fa-user"></i></button>
+    <button class="google-sign-in fixed right-2 top-3 bg-blue-900 text-white p-1 rounded-sm hover:scale-105 active:scale-95 transition-scale duration-250 ease cursor-pointer mt-3 lg:mt-7">Sign In <i class="fa-solid fa-user"></i></button>
     <button class="nav__button cursor-pointer lg:hidden fixed top-1 left-2 z-30 bg-blue-900 rounded-sm p-3 hover:scale-110 transiton-scale duration-250 ease active:scale-95"><i class="fa-solid fa-bars text-white text-4xl"></i></button>
     <nav class="nav ease max-sm:mt-6 transition-transform duration-500 z-20 fixed top-12 left-0 lg:top-0 flex md:flex-row md:gap-1 gap-2 bg-blue-900 md:justify-around w-[25dvw] md:w-full h-max flex-col md:translate-x-0"><a href="#">Home</a><a href="/flightscode/flights.html">Flights</a><a href="#">Hotels</a><a href="/aboutUsCode/aboutUs.html">About Us</a><a href="/contactuscode/ContactUs.html">Contact Us</a></nav>
     <header class="header pt-40 mt-16 lg:mt-12 lg:p-0"><h1 class="text-center text-4xl text-red-700">Sunvista Holidays</h1><h2 class="text-center text-2xl text-red-700">Every horizion, One booking away</h2></header>
@@ -51,10 +51,6 @@
             class="booking-flights__input--from-date" 
             required
         >
-
-        <label class="booking-flights__label">Returning on</label>
-
-        <input type="date" class="booking-flights__input--to-date" required>
     </div>
     <div class="booking-hotels">
         <label>Staying at (optional)</label>
@@ -63,10 +59,26 @@
         <input class="booking__nights" type="number">
     </div>
 </div>
-<button class="booking__search-button bg-yellow-500 w-max mx-auto mt-2 p-3 rounded-md font-bold text-black">
+<button class="booking__search-button bg-yellow-500 w-max mx-auto mt-2 p-3 rounded-md font-bold text-black cursor-pointer">
     Search<i class="fa-solid fa-magnifying-glass"></i>
 </button>
 <div class="results"></div>
+    </div>
+    <div>
+        <div class="build__concept-container w-[100dvw] flex items-center flex-col">
+            <h1 class="build__concept-title text-2xl font-bold">Book or Build?</h1>
+        <p class="build__concept lg:max-w-[50dvw] bg-gray-400 p-1 rounded-sm"><span class="build__concept--bold font-medium block">Sunvista Holidays gives you two ways to find your dream holiday: Book or Build.</span>
+
+Book a ready-made holiday package, or Build your own by browsing our catalogue of great-value flights and hotels. Choose the options that suit you, add them to your basket, and create a holiday that’s truly yours.
+
+Your perfect holiday. Your way.
+</p>
+</div>
+<h1 class="font text-lg font-semibold">BUILD Your Perfect Holiday</h1>
+<div class="build__links flex justify-around">
+<div class="build-concept__flight flex relative flex-col items-center bg-blue-900 text-white w-max p-1 h-30 justify-center"><p class="inline-block font-medium">Build your <span class="font-bold">Flight</span> Now</p><i class="fa-solid fa-arrow-right-long inline-block translate-x-[-100%] hover:translate-x-[-75%] absolute bottom-3 transition-transform duration-300 ease cursor-pointer text-xl build__flight-redirect right-0"></i></div>
+<div class="build-concept__hotel flex relative flex-col items-center bg-blue-900 text-white w-max p-1 h-30 justify-center"><p class="inline-block font-medium">Build your <span class="font-bold">Hotel</span> Now</p><i class="fa-solid fa-arrow-right-long inline-block translate-x-[-100%] hover:translate-x-[-75%] absolute bottom-3 transition-transform duration-300 ease cursor-pointer text-xl build__hotel-redirect right-0"></i></div>
+</div>
     </div>
     <script type="module" src="homepage.js"></script>
   </body>
