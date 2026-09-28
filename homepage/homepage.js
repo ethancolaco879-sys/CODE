@@ -59,13 +59,7 @@ const buildHotelRedirect =
 
 document.querySelector(".build__hotel-redirect");
 
-buildFlightRedirect.addEventListener("click", function() {
-    window.location.href = "/flightscode/flights.html";
-})
 
-buildHotelRedirect.addEventListener("click", function() {
-    window.location.href = "";//Put hotel Page here in the future
-} )
 
 let user = null;
 

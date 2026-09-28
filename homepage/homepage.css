@@ -17,6 +17,12 @@ body  {
     position: relative;
 }
 
+.booking-flights__suggestions div:hover, .booking-flights__suggestions--to div:hover {
+    color:#1e3a8a;
+    background-color: #dbeafe;
+    cursor: pointer;
+}
+
 .booking-flights__suggestions,
 .booking-flights__suggestions--to {
     display: none;
