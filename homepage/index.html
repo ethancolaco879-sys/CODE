@@ -10,13 +10,13 @@
     <title>Sunvista holidays </title>
     <link rel="stylesheet" href="homepage.css">
   </head>
-  <body class="antialiased">
+  <body class="antialiased w-[100dvw]">
     <button class="google-sign-in fixed right-2 top-3 bg-blue-900 text-white p-1 rounded-sm hover:scale-105 active:scale-95 transition-scale duration-250 ease cursor-pointer mt-3 lg:mt-7">Sign In <i class="fa-solid fa-user"></i></button>
     <button class="nav__button cursor-pointer md:hidden fixed top-1 left-2 z-30 bg-blue-900 rounded-sm p-3 hover:scale-110 transiton-scale duration-250 ease active:scale-95"><i class="fa-solid fa-bars text-white text-4xl"></i></button>
     <nav class="nav ease max-sm:mt-6 transition-transform duration-500 z-20 fixed top-12 left-0 md:top-0 flex md:flex-row lg:gap-1 gap-2 bg-blue-900 md:justify-around w-[25dvw] md:w-full h-max flex-col sm:translate-x-0"><a href="#">Home</a><a href="/flightscode/flights.html">Flights</a><a href="#">Hotels</a><a href="/aboutUsCode/aboutUs.html">About Us</a><a href="/contactuscode/ContactUs.html">Contact Us</a></nav>
     <header class="header pt-40 mt-16 lg:mt-12 lg:p-0"><h1 class="text-center text-4xl text-red-700">Sunvista Holidays</h1><h2 class="text-center text-2xl text-red-700">Every horizion, One booking away</h2></header>
     
-    <div class="booking flex flex-col bg-blue-400 mx-auto w-max p-3 text-white rounded-lg mt-3">
+    <div class="booking flex flex-col bg-blue-400 mx-auto w-max p-3 text-white rounded-lg mt-3 max-sm:w-[75dvw]">
 <div class="booking-flights flex flex-col gap-4">
 
     <div class="booking-flights__from flex flex-col lg:flex-row">
@@ -52,11 +52,15 @@
             required
         >
     </div>
-    <div class="booking-hotels">
+    <div class="booking-hotels flex flex-col md:flex-row gap-2">
+        <div>
         <label>Staying at (optional)</label>
         <input class="booking__hotels">
+        </div>
+        <div>
         <label>Nights</label>
         <input class="booking__nights" type="number">
+        </div>
     </div>
 </div>
 <button class="booking__search-button bg-yellow-500 w-max mx-auto mt-2 p-3 rounded-md font-bold text-black cursor-pointer">
@@ -75,12 +79,12 @@ Your perfect holiday. Your way.
 </p>
 </div>
 <h1 class="font text-lg font-semibold w-[100dvw] flex justify-center lg: text-xl">BUILD Your Perfect Holiday</h1>
-<div class="build__links flex justify-around">
-<div class="build-concept__flight flex relative flex-col items-center bg-blue-900 text-white w-max p-1 h-30 justify-center"><p class="inline-block font-medium">Build your <span class="font-bold">Flight</span> Now</p><a href="/flightscode/flights.html" aria-label="Build your flight"
+<div class="build__links flex justify-around md:bg-gray-600 pt-4 pb-4 md-w[75dvw]">
+<div class="build-concept__flight flex relative flex-col items-center bg-blue-900 text-white w-max p-1 h-30 justify-center md:p-3"><p class="inline-block font-medium text-[17px]">Build your <span class="font-bold">Flight</span> Now</p><a href="/flightscode/flights.html" aria-label="Build your flight"
    class="absolute bottom-3 right-0 translate-x-[-100%] hover:translate-x-[-75%] transition-transform duration-300 ease text-xl">
   <i class="fa-solid fa-arrow-right-long"></i>
 </a></div>
-<div class="build-concept__hotel flex relative flex-col items-center bg-blue-900 text-white w-max p-1 h-30 justify-center"><p class="inline-block font-medium">Build your <span class="font-bold">Hotel</span> Now</p><i class="fa-solid fa-arrow-right-long inline-block translate-x-[-100%] hover:translate-x-[-75%] absolute bottom-3 transition-transform duration-300 ease cursor-pointer text-xl build__hotel-redirect right-0"></i></div>
+<div class="build-concept__hotel flex relative flex-col items-center bg-blue-900 text-white w-max p-1 h-30 justify-center"><p class="inline-block font-medium text-[17px]">Build your <span class="font-bold">Hotel</span> Now</p><i class="fa-solid fa-arrow-right-long inline-block translate-x-[-100%] hover:translate-x-[-75%] absolute bottom-3 transition-transform duration-300 ease cursor-pointer text-xl build__hotel-redirect right-0"></i></div>
 </div>
     </div>
     <script type="module" src="homepage.js"></script>
