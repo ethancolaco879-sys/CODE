@@ -49,6 +49,12 @@ const navBtn = document.querySelector(".nav__button");
 
 const nav =document.querySelector(".nav");
 
+const userReview = document.querySelector(".user-review");
+
+const reviewBtn =
+
+document.querySelector(".review-button");
+
 let nights =  document.querySelector(".booking__nights").value;
 
 const buildFlightRedirect =
@@ -292,9 +298,14 @@ departDateSpare.setDate(departDateSpare.getDate() + nights);
 
 let formatted = departDateSpare.toLocaleDateString("sv-SE")
 
+
     userDepartureDate = document.querySelector(".booking-flights__input--from-date").value;
     const selectedFrom = fromDestination.value;
     const selectedTo = toDestinationsInput.value;
+    if(!selectedFrom || !selectedTo || !nights) {
+    alert("Please complete the form");
+    return;
+}
     matchingFlights = flights.filter(function(flight) {
         return flight.from === selectedFrom
         && flight.to === selectedTo
@@ -308,3 +319,10 @@ window.location.href = `/results/results.html?${params.toString()}`;
 
 })
 
+reviewBtn.addEventListener("click", function() {
+let userReviewValue = userReview.value;
+setDoc(doc(db, "reviews", user.uid), {
+review: userReviewValue,
+date: new Date().toLocaleDateString("en-GB")
+})
+}) 
