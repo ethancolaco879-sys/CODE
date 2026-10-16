@@ -70,8 +70,8 @@
     </div>
     <div>
         <div class="build__concept-container w-[100dvw] flex items-center flex-col">
-            <h1 class="build__concept-title text-2xl font-bold">Book or Build?</h1>
-        <p class="build__concept lg:max-w-[50dvw] bg-gray-400 p-1 rounded-sm"><span class="build__concept--bold font-medium block">Sunvista Holidays gives you two ways to find your dream holiday: Book or Build.</span>
+            <h1 class="build__concept-title text-2xl font-bold mt-3">Book or Build?</h1>
+        <p class="build__concept lg:max-w-[50dvw] bg-gray-400 p-1 rounded-sm mb-5"><span class="build__concept--bold font-medium block">Sunvista Holidays gives you two ways to find your dream holiday: Book or Build.</span>
 
 Book a ready-made holiday package, or Build your own by browsing our catalogue of great-value flights and hotels. Choose the options that suit you, add them to your basket, and create a holiday that’s truly yours.
 
@@ -91,10 +91,18 @@ Your perfect holiday. Your way.
 </div>
 </div>
     </div>
-    <div class="reviews">
-        <h1 class="review-title text-2xl text-center">Write a review</h1>
-        <input class="user-review border">
-        <button class="review-button bg-gray-600 text-white p-1 block cursor-pointer">Submit</button>
+    <div class="reviews flex flex-col items-center gap-3">
+        <h1 class="review-title text-2xl text-center font-semibold">Write a review</h1>
+        <div class="user-review-contianer relative w-[100dvw] p-10 flex flex-col justify-center items-center">
+        <input class="user-review  bg-gray-500 rounded-sm text-white p-1">
+        <button class="review-button bg-gray-600 text-white p-2 block cursor-pointer rounded-sm font-semibold text-lg mb-1 mt-3">Submit</button>
+                    <div class="overlay absolute inset-0 bg-black/40 backdrop-blur-xs flex justify-center items-center text-xl font-bold">Sign In to write a review</div>
+        </div>
+
+        
+                <div class="showcaseReview">
+                    
+                </div>
         </div>
     <script type="module" src="homepage.js"></script>
   </body>

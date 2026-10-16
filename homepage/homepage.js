@@ -28,6 +28,8 @@ const provider = new GoogleAuthProvider();
 const signIn =
 document.querySelector(".google-sign-in");
 
+        const showcaseReview =
+document.querySelector(".showcaseReview");
 
 const fromDestination = document.querySelector(".booking-flights__input");
 
@@ -55,15 +57,12 @@ const reviewBtn =
 
 document.querySelector(".review-button");
 
-let nights =  document.querySelector(".booking__nights").value;
 
 const buildFlightRedirect =
 
 document.querySelector(".build__flight-redirect");
 
-const buildHotelRedirect =
-
-document.querySelector(".build__hotel-redirect");
+const overlay =document.querySelector(".overlay");
 
 
 
@@ -73,6 +72,8 @@ onAuthStateChanged(auth, (currentUser) => {
     if(currentUser) {
         user = currentUser;
         signIn.style.display = "none";
+        overlay.style.display = "none";
+
     }
     else {
         user = null;
@@ -285,6 +286,8 @@ function closeSuggestions() {
 }
 
 searchBtn.addEventListener("click", function() {
+    
+let nights =  document.querySelector(".booking__nights").value;
 
     nights = Number.parseInt(nights);
     const departDate =
@@ -319,10 +322,46 @@ window.location.href = `/results/results.html?${params.toString()}`;
 
 })
 
-reviewBtn.addEventListener("click", function() {
-let userReviewValue = userReview.value;
-setDoc(doc(db, "reviews", user.uid), {
-review: userReviewValue,
-date: new Date().toLocaleDateString("en-GB")
+reviewBtn.addEventListener("click", submitReview)
+
+userReview.addEventListener("keydown", function(event) {
+    if(event.key === 'Enter') {
+        event.preventDefault;
+        submitReview()
+    }
 })
-}) 
+
+async function submitReview() {
+    if(!user) {
+        return;
+    }
+
+    let text = userReview.value.trim();
+    if(!text || text.length > 500) {
+        return;
+    }
+
+        try {
+           await setDoc(doc(db, "reviews", user.uid), {
+review: text,
+date: new Date().toLocaleDateString("en-GB")
+
+})
+userReview.value = "";
+console.log("Review Saved")   
+   }
+
+   catch (err) {
+    alert(`ERROR ${err}. Review not saved. Please try again soon`)
+   }
+
+}
+
+onSnapshot(collection(db, "reviews"),(snapshots) => {
+    snapshots.docs.slice(0,1).forEach((snapshot) => {
+        let p = document.createElement("p")
+        p.classList.add("review");
+p.textContent = `${snapshot.data().review}`;
+showcaseReview.replaceChildren(p);
+    })
+})
