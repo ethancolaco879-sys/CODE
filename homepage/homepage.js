@@ -3,7 +3,8 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-analytics.js";
 import { getFirestore, collection, addDoc, onSnapshot, doc, setDoc, serverTimestamp} from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
-  // TODO: Add SDKs for Firebase products that you want to use
+  console.log("js works")
+import { startingPlaces, endingPlaces, flights } from "../largefiles/searcharrays.js";
   // https://firebase.google.com/docs/web/setup#available-libraries
 
   // Your web app's Firebase configuration
@@ -18,12 +19,18 @@ import { getFirestore, collection, addDoc, onSnapshot, doc, setDoc, serverTimest
     measurementId: "G-5NYX53VZPR"
   };
 
+
+
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   const db = getFirestore(app);
   const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+
+console.log("Starting places:", startingPlaces);
+console.log("Ending places:", endingPlaces);
+console.log("Flights:", flights);
 
 const signIn =
 document.querySelector(".google-sign-in");
@@ -364,4 +371,5 @@ onSnapshot(collection(db, "reviews"),(snapshots) => {
 p.textContent = `${snapshot.data().review}`;
 showcaseReview.replaceChildren(p);
     })
-})
+});
+

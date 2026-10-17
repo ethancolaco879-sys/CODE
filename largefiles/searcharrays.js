@@ -1,4 +1,4 @@
-const startingPlaces = [
+export const startingPlaces = [
     "Belfast International",
     "Birmingham",
     "Bristol",
@@ -15,7 +15,7 @@ const startingPlaces = [
     "Newcastle International"
 ];
 
-const endingPlaces = [
+export const endingPlaces = [
   // Austria
   "Innsbruck Airport (INN)",
   "Salzburg Airport (SZG)",
@@ -151,7 +151,7 @@ const endingPlaces = [
   "Izmir Adnan Menderes Airport (ADB)"
 ];
 
-const flights = [
+export const flights = [
     {
         id: 1,
         from: "London Stansted",

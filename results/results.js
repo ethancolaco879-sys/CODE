@@ -14,7 +14,11 @@ for(let matchingFlight of matchingFlights) {
     let returnDate = matchingFlight.returnDate;
     let flight = document.createElement("div");
     flight.classList.add("flight");
-
+                        flight.addEventListener("click", function() {
+                        localStorage.setItem("clickedFlight", JSON.stringify(matchingFlight));
+                        let clickedFlight = localStorage.getItem("clickedFlight")
+                        console.log(clickedFlight)
+                    })
     
         flight.innerHTML = `<p>${from}<i class="fa-solid fa-plane"></i>${to}</p>
                  <p>£${price}<i class="fa-solid fa-coins"></i></p>
@@ -30,4 +34,6 @@ for(let matchingFlight of matchingFlights) {
 
                       if(matchingFlights.length === 0) {
                     results.innerHTML = "No results";
+
+                    
                  }
