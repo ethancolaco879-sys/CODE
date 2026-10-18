@@ -1,4 +1,25 @@
 .flight {
     background-color: lightgrey;
     text-align: center;
+    width: max-content;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
+
+.flight p {
+    font-weight: 600;
+}
+
+.add-to-basket-btn {
+    font-weight: 700;
+    cursor: pointer;
+    background-color: yellow;
+    display: inline-block;
+    border-radius: 0.5rem;
+    width: max-content;
+    padding: 0.2rem;
+}
+
