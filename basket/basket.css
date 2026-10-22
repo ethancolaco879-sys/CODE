@@ -1,0 +1,14 @@
+.savedFlight {
+    background-color: lightgrey;
+    text-align: center;
+    width: max-content;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.savedFlight p {
+    font-weight: 600;
+}

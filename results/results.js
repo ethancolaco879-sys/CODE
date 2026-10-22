@@ -1,3 +1,7 @@
+import {db} from '../firebase.js'
+import {auth} from '../firebase.js';
+  import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-auth.js";
+import { doc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
 const urlParams = new URLSearchParams(window.location.search);
 
 const matchingFlights = JSON.parse(urlParams.get("matchingFlights"));
@@ -34,22 +38,42 @@ for(let matchingFlight of matchingFlights) {
                  results.appendChild(flight);
                  flight.classList.add("detailsHolder");
 
-                 const addToBasket =
-document.querySelector(".add-to-basket-btn");
+                 let addToBasket =
+flight.querySelector(".add-to-basket-btn");
                                       addToBasket.addEventListener("click", function() {
-                        localStorage.setItem("clickedFlight", JSON.stringify(matchingFlight));
+                                        let tick = document.createElement("p");
+                                        tick.innerHTML = `Added To basket <i class="fa-solid fa-check"></i>`
+                                        addToBasket.replaceWith(tick) 
+                                        console.log("clicked");
+                                        let user = auth.currentUser;
+                                        
+                                    if(!user) {
+                                                                                                            localStorage.setItem("clickedFlight", JSON.stringify(matchingFlight));
                         
                             basket.push(matchingFlight);
                             console.log(basket)
                             localStorage.setItem("basketValues", JSON.stringify(basket));
+                            console.log("not signed in") //For testing purposes only; remove before launch
+                                    }
+                                    else {
+                                        setDoc(doc(db, "basket", user.uid), {
+                                            selectedFlight: arrayUnion(matchingFlight)
+                                        }, {merge: true})
+                                        basket.push(matchingFlight);
+                                        console.log("signed in") //For testing purposes only; remove before launch 
+                                    }
+
+                            
+                                     })   
+
                         
         
                     
-                    })
+                   } 
 
 
 
-}
+
 
                       if(matchingFlights.length === 0) {
                     results.innerHTML = "No results";
