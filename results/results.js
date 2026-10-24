@@ -1,5 +1,6 @@
 import {db} from '../firebase.js'
 import {auth} from '../firebase.js';
+
   import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-auth.js";
 import { doc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
 const urlParams = new URLSearchParams(window.location.search);

@@ -54,13 +54,11 @@ document.querySelector(".build__flight-redirect");
 
 const overlay =document.querySelector(".overlay");
 
-
-
+const stars =
+document.querySelectorAll(".star");
 let user = null;
 
-signOut(auth).then(() => {
-  console.log("Signed out");
-});
+let starValue = null;
 
 onAuthStateChanged(auth, (currentUser) => {
     if(currentUser) {
@@ -73,6 +71,8 @@ onAuthStateChanged(auth, (currentUser) => {
         user = null;
     }
 })
+
+
 
 let userDepartureDate = null;
 
@@ -342,7 +342,8 @@ async function submitReview() {
         try {
            await setDoc(doc(db, "reviews", user.uid), {
 review: text,
-date: new Date().toLocaleDateString("en-GB")
+date: new Date().toLocaleDateString("en-GB"),
+stars: starValue
 
 })
 userReview.value = "";
@@ -356,11 +357,49 @@ console.log("Review Saved")
 }
 
 onSnapshot(collection(db, "reviews"),(snapshots) => {
-    snapshots.docs.slice(0,1).forEach((snapshot) => {
+    snapshots.docs.slice(0,3).forEach((snapshot) => {
         let p = document.createElement("p")
         p.classList.add("review");
-p.textContent = `${snapshot.data().review}`;
+p.innerHTML = `<p>${snapshot.data().review}</p>`;
 showcaseReview.replaceChildren(p);
     })
 });
+
+// Star code
+
+        let clicked = false;
+
+
+stars.forEach((star, index) => {
+        star.addEventListener("click", function() {
+            clicked = true;
+            stars.forEach((innerStar, innerIndex) => {
+                innerStar.style.color = innerIndex <= index ? "gold": "grey";
+            })
+            starValue = index + 1;
+            console.log(starValue);
+        })
+
+
+        star.addEventListener("mouseover", function() {
+        stars.forEach((innerStar, innerIndex) => {
+            if(!clicked){
+            innerStar.style.color = innerIndex <= index ? "#FFE97F": "grey";
+
+            }
+        })
+    })
+
+    star.addEventListener("mouseout", function() {
+        if(!clicked){
+                 for(let i = index; i >= 0; i--) {
+            stars[i].style.color = "grey";
+        }
+        }
+   
+    })
+
+
+
+})
 

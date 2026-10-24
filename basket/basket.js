@@ -1,5 +1,6 @@
 import {db} from '../firebase.js'
 import {auth} from '../firebase.js';
+
   import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-auth.js";
 import {updateDoc, arrayUnion, deleteDoc, getFirestore, collection, addDoc, onSnapshot, doc, setDoc, serverTimestamp} from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
 
@@ -78,20 +79,16 @@ let returnDate = savedFlight.returnDate;
                              }
                     }
                     else {
-                        console.log("not signed in")
+                        console.log("not signed in");
+                        basket.splice(index, 1);
+                        localStorage.setItem("basketValues", JSON.stringify(basket));
+                        displayFlights()
                     }
                   })
                  addedFlightsHolder.append(flight)
-                 console.log(
-    "Same trash icon?",
-    remove === flight.querySelector(".remove")
-);
 
-console.log(
-    "Still connected?",
-    remove.isConnected
-);
-                 console.log(flight)
+
+
 }) //forEach 
 } //DisplayFlights
 

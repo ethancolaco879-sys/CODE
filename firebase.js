@@ -1,7 +1,7 @@
   // Import the functions you need from the SDKs you need
   import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-auth.js";
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-analytics.js";
+import { getAnalytics} from "https://www.gstatic.com/firebasejs/12.17.0/firebase-analytics.js";
 import { getFirestore, collection, addDoc, onSnapshot, doc, setDoc, serverTimestamp} from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
   console.log("js works")
   // https://firebase.google.com/docs/web/setup#available-libraries

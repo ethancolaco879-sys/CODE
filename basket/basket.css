@@ -36,6 +36,7 @@
 .remove {
     align-self: flex-end;
     width: max-content;
+    cursor: pointer;
 }
 
 .favorite {
@@ -45,6 +46,7 @@
 
 .favorite .icon-on {
     display: none;
+    cursor: pointer;
 }
 
 .favorite .icon-off {
@@ -59,3 +61,4 @@
 .favorite.active-heart .icon-off {
     display: none;
 }
+

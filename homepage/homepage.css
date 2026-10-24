@@ -11,7 +11,24 @@
 body  {
     width: 100dvw;
     height: 100dvh;
+    overflow-x: hidden;
 }
+
+/* For modern browsers (Firefox, Chrome 121+, Edge 121+, Safari 18.2+) */
+body {
+  scrollbar-width: none;
+}
+
+/* For Internet Explorer and older Edge */
+body {
+  -ms-overflow-style: none;
+}
+
+/* For WebKit browsers (Chrome, Safari, and Opera) */
+body::-webkit-scrollbar {
+  display: none;
+}
+
 
 .booking-flights__to, .booking-flights__from {
     position: relative;
@@ -70,3 +87,7 @@ nav a:hover {
     background-size: 100% 100%;
 }
 
+.star {
+    color: grey;
+    font-size: 2rem;
+}
